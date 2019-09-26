@@ -1,0 +1,479 @@
+[{
+  "language": "english",
+  "title": " Test if you can get financial aid",
+  "defaultActiveSection": 2,
+  "sections": [{
+      "section": "income",
+      "description": "for us to be able to figure out if you have the right to financial aid, we need to know your income for the next 30 days. you don't need to enter mony you receive from Försäkringskassan,CSN,skatteverket or a-kassa. pleas chose the option that apply to you",
+      "inputs": [{
+          "id": 1,
+          "title": "Salary",
+          "helpText": "Salary is mony you receive for work that you do",
+          "checked": true,
+          "userInputs": [{
+              "type": "number",
+              "name": "Salary",
+              "placeholder": "amount",
+              "defaultValue": 5000
+            },
+            {
+              "name": "Salary_date",
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Part of rent",
+          "helpText": "Part of rent means that you are getting help to pay your apartment or house rent rent, for example, if you share your home with someone else",
+          "checked": true,
+          "userInputs": [{
+              "type": "number",
+              "name": "Part_of_rent",
+              "placeholder": "amount",
+              "defaultValue": 999999999999
+            },
+            {
+              "name": "Part_of_rent_date",
+              "type": "date"
+
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Part of electricity",
+          "helpText": "Part of electricity bill means that you are getting help to pay for your electricity bill, fill in the amount that you receive",
+          "userInputs": [{
+              "type": "number",
+              "name": "Part_of_electricity",
+              "placeholder": "amount"
+            },
+            {
+              "name": "SPart_of_electricity_date",
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Pension from another Country",
+          "helpText": "Pension from another country means you are receiving mony from pension found outside of sweden, fill in the amount you receive",
+          "userInputs": [{
+              "type": "number",
+              "name": "Pension_from_another_Country",
+              "placeholder": "amount"
+            },
+            {
+              "name": "Pension_from_another_Country_date",
+              "type": "date"
+
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Borrowed or loaned mony",
+          "helpText": "Borrowed or loaned mony is mony you borrow from someone else, or mony you have loaned out that is being repaid to you as cash, swish or transaction to you bank account, fill in the amount you receive",
+          "userInputs": [{
+              "type": "number",
+              "name": "Borrowed_or_loaned_mony",
+              "placeholder": "amount"
+            },
+            {
+              "name": "Borrowed_or_loaned_mony_date",
+              "type": "date"
+
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Other income",
+          "helpText": "if you receive mony in any other way, please fill that in here. this can be for example inherited mony, mony you receive as a gift, or mony you receive from an insurance company",
+          "userInputs": [{
+            "type": "number",
+            "name": "Other_income",
+            "placeholder": "amount"
+          }, {
+            "name": "Other_income_date",
+            "type": "date"
+          }]
+        }
+      ]
+    },
+    {
+      "section": "expenses",
+      "description": "For us to figure out if you have the right to financial aid, we need to know your expenses for the next 30 days.",
+      "inputs": [{
+          "id": 7,
+          "title": "Rent",
+          "helpText": "Rent is the money you pay for where you live. This can be a house, an apartment or a room in a house.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Rent",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 8,
+          "title": "Electricity",
+          "checked": true,
+          "helpText": "If you receive an invoice for electricity fill in the amount stated on the invoice. If you receive two invoices, one for energy network fees and one for the actual electricity usage, fill in the total sum for both.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Electricity",
+            "placeholder": "amount",
+            "defaultValue": 8000
+
+          }]
+        },
+        {
+          "id": 9,
+          "title": "Home Insurance",
+          "helpText": "Home insurance is the fee you pay for insurance for your house or apartment.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Home_Insurance",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 10,
+          "title": "Broadband",
+          "helpText": "Broadband fee is the sum you pay for your internet access.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Broadband",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 11,
+          "title": "Childcare",
+          "helpText": "Childcare is the money you pay for pre-school.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Childcare",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 12,
+          "title": "Dental Care",
+          "helpText": "Dental care is the money you pay for visits to the dentist.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Dental_Care",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 13,
+          "title": "Medicine And Healthcare",
+          "helpText": "Medicine and healthcare could for example be money you pay to visit a doctor or to pay for prescription drugs.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Medicine_And_Healthcare",
+            "placeholder": "amount"
+          }]
+        },
+
+        {
+          "id": 14,
+          "title": "Home loan",
+          "helpText": "Home loan is a loan for a house or an apartment you have purchased.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Home_loan",
+            "placeholder": "amount"
+          }]
+        },
+
+        {
+          "id": 15,
+          "title": "Travel Fees",
+          "helpText": "Travel fees is what you spend on public transportation, for example tickets or monthly pass for Skånetrafiken. ",
+          "userInputs": [{
+            "type": "number",
+            "name": "Travel_Fees",
+            "placeholder": "amount"
+          }]
+        },
+
+        {
+          "id": 16,
+          "title": "Unions Fees And A-kassa",
+          "helpText": "Union fee is the monthly cost to be a union member. If you pay for a-kassa, don’t forget to add in that cost.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Unions_Fees_And_A-kassa",
+            "placeholder": "amount"
+          }]
+        },
+
+        {
+          "id": 17,
+          "title": "Other Expenses",
+          "helpText": "If you have any other expenses plaese fill that in here. This can be, for example, debts you have with rent, electricity or childcare, fees for garbage collection or fees for water and sewage.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Other_Expenses",
+            "placeholder": "amount"
+          }]
+        }
+      ]
+    }
+  ],
+  "buttons": {
+    "resetBtn": "Reset",
+    "finish": "Finish",
+    "next": "Next",
+    "back": "Back"
+  },
+  "steppersSteps": {
+    "incomeStepTitle": "Income",
+    "expensesStepTitle": "Expenses",
+    "summaryStepTitle": "Summary"
+
+  }
+}, {
+  "language": "arabic",
+  "title": " اختبار ما إذا كان يمكنك الحصول على المساعدات المالية",
+  "defaultActiveSection": 2,
+  "sections": [{
+      "section": "الدخل",
+      "description": "for us to be able to figure out if you have the right to financial aid, we need to know your income for the next 30 days. you don't need to enter mony you receive from Försäkringskassan,CSN,skatteverket or a-kassa. pleas chose the option that apply to you",
+      "inputs": [{
+          "id": 1,
+          "title": "Salary",
+          "helpText": "Salary is mony you receive for work that you do",
+          "checked": true,
+          "userInputs": [{
+              "type": "number",
+              "name": "Salary",
+              "placeholder": "amount",
+              "defaultValue": 5000
+            },
+            {
+              "name": "Salary_date",
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Part of rent",
+          "helpText": "Part of rent means that you are getting help to pay your apartment or house rent rent, for example, if you share your home with someone else",
+          "checked": true,
+          "userInputs": [{
+              "type": "number",
+              "name": "Part_of_rent",
+              "placeholder": "amount",
+              "defaultValue": 999999999999
+            },
+            {
+              "name": "Part_of_rent_date",
+              "type": "date"
+
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Part of electricity",
+          "helpText": "Part of electricity bill means that you are getting help to pay for your electricity bill, fill in the amount that you receive",
+          "userInputs": [{
+              "type": "number",
+              "name": "Part_of_electricity",
+              "placeholder": "amount"
+            },
+            {
+              "name": "SPart_of_electricity_date",
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Pension from another Country",
+          "helpText": "Pension from another country means you are receiving mony from pension found outside of sweden, fill in the amount you receive",
+          "userInputs": [{
+              "type": "number",
+              "name": "Pension_from_another_Country",
+              "placeholder": "amount"
+            },
+            {
+              "name": "Pension_from_another_Country_date",
+              "type": "date"
+
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Borrowed or loaned mony",
+          "helpText": "Borrowed or loaned mony is mony you borrow from someone else, or mony you have loaned out that is being repaid to you as cash, swish or transaction to you bank account, fill in the amount you receive",
+          "userInputs": [{
+              "type": "number",
+              "name": "Borrowed_or_loaned_mony",
+              "placeholder": "amount"
+            },
+            {
+              "name": "Borrowed_or_loaned_mony_date",
+              "type": "date"
+
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Other income",
+          "helpText": "if you receive mony in any other way, please fill that in here. this can be for example inherited mony, mony you receive as a gift, or mony you receive from an insurance company",
+          "userInputs": [{
+            "type": "number",
+            "name": "Other_income",
+            "placeholder": "amount"
+          }, {
+            "name": "Other_income_date",
+            "type": "date"
+          }]
+        }
+      ]
+    },
+    {
+      "section": "expenses",
+      "description": "For us to figure out if you have the right to financial aid, we need to know your expenses for the next 30 days.",
+      "inputs": [{
+          "id": 7,
+          "title": "Rent",
+          "helpText": "Rent is the money you pay for where you live. This can be a house, an apartment or a room in a house.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Rent",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 8,
+          "title": "Electricity",
+          "checked": true,
+          "helpText": "If you receive an invoice for electricity fill in the amount stated on the invoice. If you receive two invoices, one for energy network fees and one for the actual electricity usage, fill in the total sum for both.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Electricity",
+            "placeholder": "amount",
+            "defaultValue": 8000
+
+          }]
+        },
+        {
+          "id": 9,
+          "title": "Home Insurance",
+          "helpText": "Home insurance is the fee you pay for insurance for your house or apartment.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Home_Insurance",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 10,
+          "title": "Broadband",
+          "helpText": "Broadband fee is the sum you pay for your internet access.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Broadband",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 11,
+          "title": "Childcare",
+          "helpText": "Childcare is the money you pay for pre-school.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Childcare",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 12,
+          "title": "Dental Care",
+          "helpText": "Dental care is the money you pay for visits to the dentist.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Dental_Care",
+            "placeholder": "amount"
+          }]
+        },
+        {
+          "id": 13,
+          "title": "Medicine And Healthcare",
+          "helpText": "Medicine and healthcare could for example be money you pay to visit a doctor or to pay for prescription drugs.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Medicine_And_Healthcare",
+            "placeholder": "amount"
+          }]
+        },
+
+        {
+          "id": 14,
+          "title": "Home loan",
+          "helpText": "Home loan is a loan for a house or an apartment you have purchased.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Home_loan",
+            "placeholder": "amount"
+          }]
+        },
+
+        {
+          "id": 15,
+          "title": "Travel Fees",
+          "helpText": "Travel fees is what you spend on public transportation, for example tickets or monthly pass for Skånetrafiken. ",
+          "userInputs": [{
+            "type": "number",
+            "name": "Travel_Fees",
+            "placeholder": "amount"
+          }]
+        },
+
+        {
+          "id": 16,
+          "title": "Unions Fees And A-kassa",
+          "helpText": "Union fee is the monthly cost to be a union member. If you pay for a-kassa, don’t forget to add in that cost.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Unions_Fees_And_A-kassa",
+            "placeholder": "amount"
+          }]
+        },
+
+        {
+          "id": 17,
+          "title": "Other Expenses",
+          "helpText": "If you have any other expenses plaese fill that in here. This can be, for example, debts you have with rent, electricity or childcare, fees for garbage collection or fees for water and sewage.",
+          "userInputs": [{
+            "type": "number",
+            "name": "Other_Expenses",
+            "placeholder": "amount"
+          }]
+        }
+      ]
+    }
+  ],
+  "buttons": {
+    "resetBtn": "Reset",
+    "finish": "Finish",
+    "next": "Next",
+    "back": "Back"
+  },
+  "steppersSteps": {
+    "incomeStepTitle": "Income",
+    "expensesStepTitle": "Expenses",
+    "summaryStepTitle": "Summary"
+
+  }
+}]
