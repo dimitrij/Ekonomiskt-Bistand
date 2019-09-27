@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => {
         borderRadius: '50%',
       },
       '& .MuiStepConnector-line': {
-        borderColor: theme.palette.primary.main
+        borderColor: theme.palette.primary.main[50]
       }, '& .MuiStepConnector-alternativeLabel': {
         left: 'calc(-50% + 14px)',
         right: 'calc(50% + 14px)',

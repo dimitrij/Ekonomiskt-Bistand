@@ -9,7 +9,7 @@ const IncomeForm = ({ data: { description, inputs, section } }) => {
   return (
     <>
       <p style={{ fontWeight: 'bold', color: 'black' }}>{description}</p>
-      <FormGroup>
+      <FormGroup style={{ flexWrap: 'nowrap' }}>
         {inputs.map(({ title, helpText, userInputs, id, checked, type }, index) => (
           <div key={index}> {type === 'radio' ?
             <FormRadio userInputs={userInputs} title={title} /> : type === 'select' ?

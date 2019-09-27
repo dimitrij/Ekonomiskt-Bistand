@@ -47,7 +47,8 @@ const useStyles = makeStyles(theme => ({
     transition: 'all .3s',
   },
   notActive: {
-    background: 'lightgray'
+    background: theme.palette.primary.mainLight,
+    color: '#929292e0'
   }
 }));
 const FormRadio = ({ userInputs }) => {
