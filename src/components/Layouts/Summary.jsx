@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { doCalculate, ediAmount } from '../../actions/startAction'
 
 const useStyles = makeStyles(theme => {
-  console.log(theme.palette.primary.main)
-  console.log(theme.palette.primary.second)
   return ({
     root: {
       color: theme.palette.primary.second,

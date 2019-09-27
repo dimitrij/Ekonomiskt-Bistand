@@ -56,14 +56,13 @@ const useStyles = makeStyles(theme => {
 
 
 
-const StepperBar = ({ ediAmount, defaultActiveSection, appLanguageData: { buttons: { resetBtn, next, finish, back }, steppersSteps: { incomeStepTitle, expensesStepTitle, summaryStepTitle }, sections } }) => {
+const StepperBar = ({ defaultSteps, ediAmount, defaultActiveSection, appLanguageData: { buttons: { resetBtn, next, finish, back }, steppersSteps: { incomeStepTitle, expensesStepTitle, summaryStepTitle, familyStatus }, sections } }) => {
   const getSteps = () => {
-    return [incomeStepTitle, expensesStepTitle, summaryStepTitle];
+    return [...defaultSteps, summaryStepTitle];
   }
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(defaultActiveSection);
-  const steps = getSteps();
-
+  const steps = getSteps()
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
@@ -101,9 +100,12 @@ const StepperBar = ({ ediAmount, defaultActiveSection, appLanguageData: { button
           </div>
         ) : (
             <div className={classes.bodyHolder}>
-              {activeStep === 0 && <Form data={sections[0]} />}
-              {activeStep === 1 && <Form data={sections[1]} />}
-              {activeStep === 2 && <Summary />}
+              {
+                activeStep !== steps.length - 1 ?
+                  sections.map((section, index) => section.sectionTitle === steps[activeStep] ? <Form key={index} data={section} /> : null)
+
+                  : <Summary />
+              }
               <div className={classes.buttonsHolder}>
                 <Button
                   disabled={activeStep === 0}
@@ -122,5 +124,5 @@ const StepperBar = ({ ediAmount, defaultActiveSection, appLanguageData: { button
     </div >
   );
 }
-const mapStateToProps = ({ appLanguageData, defaultActiveSection }) => ({ appLanguageData, defaultActiveSection })
+const mapStateToProps = ({ appLanguageData, defaultActiveSection, defaultSteps }) => ({ appLanguageData, defaultActiveSection, defaultSteps })
 export default connect(mapStateToProps, { ediAmount })(StepperBar)

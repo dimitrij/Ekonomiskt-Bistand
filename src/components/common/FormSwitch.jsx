@@ -8,6 +8,9 @@ import InfoModal from '../Layouts/InfoModal'
 import FromInput from './FormInput';
 import { resetValue } from '../../actions/startAction'
 
+
+
+
 const useStyles = makeStyles(theme => {
   return ({
     FormControl:
@@ -101,6 +104,7 @@ const FormSwitch = ({ title, userInputs, helperText, id, checked, section, reset
   const [isChecked, setChecked] = useState(checked || false)
   const [modalStatus, setModalStatus] = useState(false)
 
+
   return (
     <>
       <FormControlLabel
@@ -135,3 +139,5 @@ const FormSwitch = ({ title, userInputs, helperText, id, checked, section, reset
 
 
 export default connect(null, { resetValue })(FormSwitch);
+
+

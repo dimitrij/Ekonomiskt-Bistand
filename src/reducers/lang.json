@@ -1,225 +1,235 @@
 [{
-  "language": "english",
-  "title": " Test if you can get financial aid",
+  "language": "swedish",
+  "title": " Testa om du kan få försörjningsstöd ",
   "defaultActiveSection": 2,
   "sections": [{
       "section": "income",
-      "description": "for us to be able to figure out if you have the right to financial aid, we need to know your income for the next 30 days. you don't need to enter mony you receive from Försäkringskassan,CSN,skatteverket or a-kassa. pleas chose the option that apply to you",
+      "sectionTitle": "Inkomster",
+      "description": "Ange hela hushållets inkomster per månad i respektive ruta. Beloppen ska vara netto efter skatt och avrundade till hela kronor. Inkomster som inte passar in kan du lägga ihop under övrigt. Om du inte anger några inkomster räknas de som noll (0).",
       "inputs": [{
           "id": 1,
-          "title": "Salary",
-          "helpText": "Salary is mony you receive for work that you do",
-          "checked": true,
+          "title": "Lön",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
-              "type": "number",
-              "name": "Salary",
-              "placeholder": "amount",
-              "defaultValue": 5000
-            },
-            {
-              "name": "Salary_date",
-              "type": "date"
-            }
-          ]
+            "type": "number",
+            "name": "Salary",
+            "placeholder": "belopp"
+          }]
+        },
+        {
+          "id": 16,
+          "title": "Arbetslöshetsersättning",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
+          "userInputs": [{
+            "type": "number",
+            "name": "Unions_Fees_And_A-kassa",
+            "placeholder": "belopp"
+          }]
         },
         {
           "id": 2,
-          "title": "Part of rent",
-          "helpText": "Part of rent means that you are getting help to pay your apartment or house rent rent, for example, if you share your home with someone else",
-          "checked": true,
+          "title": "Sjuk- och aktivitetsersättning",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
-              "type": "number",
-              "name": "Part_of_rent",
-              "placeholder": "amount",
-              "defaultValue": 999999999999
-            },
-            {
-              "name": "Part_of_rent_date",
-              "type": "date"
-
-            }
-          ]
+            "type": "number",
+            "name": "Part_of_rent",
+            "placeholder": "belopp"
+          }]
         },
         {
           "id": 3,
-          "title": "Part of electricity",
-          "helpText": "Part of electricity bill means that you are getting help to pay for your electricity bill, fill in the amount that you receive",
+          "title": "Sjukpenning",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
-              "type": "number",
-              "name": "Part_of_electricity",
-              "placeholder": "amount"
-            },
-            {
-              "name": "SPart_of_electricity_date",
-              "type": "date"
-            }
-          ]
+            "type": "number",
+            "name": "Part_of_electricity",
+            "placeholder": "belopp"
+          }]
         },
         {
           "id": 4,
-          "title": "Pension from another Country",
-          "helpText": "Pension from another country means you are receiving mony from pension found outside of sweden, fill in the amount you receive",
+          "title": "Föräldrapenning",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
-              "type": "number",
-              "name": "Pension_from_another_Country",
-              "placeholder": "amount"
-            },
-            {
-              "name": "Pension_from_another_Country_date",
-              "type": "date"
-
-            }
-          ]
+            "type": "number",
+            "name": "Pension_from_another_Country",
+            "placeholder": "belopp"
+          }]
         },
         {
           "id": 5,
-          "title": "Borrowed or loaned mony",
-          "helpText": "Borrowed or loaned mony is mony you borrow from someone else, or mony you have loaned out that is being repaid to you as cash, swish or transaction to you bank account, fill in the amount you receive",
+          "title": "Pension",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
-              "type": "number",
-              "name": "Borrowed_or_loaned_mony",
-              "placeholder": "amount"
-            },
-            {
-              "name": "Borrowed_or_loaned_mony_date",
-              "type": "date"
-
-            }
-          ]
+            "type": "number",
+            "name": "Borrowed_or_loaned_mony",
+            "placeholder": "belopp"
+          }]
         },
         {
           "id": 6,
-          "title": "Other income",
-          "helpText": "if you receive mony in any other way, please fill that in here. this can be for example inherited mony, mony you receive as a gift, or mony you receive from an insurance company",
+          "title": "Underhållsstöd/-bidrag",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
             "name": "Other_income",
-            "placeholder": "amount"
-          }, {
-            "name": "Other_income_date",
-            "type": "date"
+            "placeholder": "belopp"
+          }]
+        },
+        {
+          "id": 6,
+          "title": "Barnbidrag",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
+          "userInputs": [{
+            "type": "number",
+            "name": "Other_income",
+            "placeholder": "belopp"
+          }]
+        },
+        {
+          "id": 6,
+          "title": "Studiestöd",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
+          "userInputs": [{
+            "type": "number",
+            "name": "Other_income",
+            "placeholder": "belopp"
+          }]
+        },
+        {
+          "id": 6,
+          "title": "Bostadsbidrag",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
+          "userInputs": [{
+            "type": "number",
+            "name": "Other_income",
+            "placeholder": "belopp"
+          }]
+        }, {
+          "id": 6,
+          "title": "Övrigt",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
+          "userInputs": [{
+            "type": "number",
+            "name": "Other_income",
+            "placeholder": "belopp"
           }]
         }
       ]
     },
     {
       "section": "expenses",
-      "description": "For us to figure out if you have the right to financial aid, we need to know your expenses for the next 30 days.",
+      "sectionTitle": "Utgifter",
+      "description": "Ange hela hushållets utgifter per månad i respektive ruta. Avrunda till hela kronor. Om du inte anger några kostnader räknas de som noll (0).",
       "inputs": [{
           "id": 7,
-          "title": "Rent",
-          "helpText": "Rent is the money you pay for where you live. This can be a house, an apartment or a room in a house.",
+          "title": "Bostad",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
             "name": "Rent",
-            "placeholder": "amount"
+            "placeholder": "belopp"
           }]
         },
         {
           "id": 8,
-          "title": "Electricity",
-          "checked": true,
-          "helpText": "If you receive an invoice for electricity fill in the amount stated on the invoice. If you receive two invoices, one for energy network fees and one for the actual electricity usage, fill in the total sum for both.",
+          "title": "Hushållsel",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
             "name": "Electricity",
-            "placeholder": "amount",
-            "defaultValue": 8000
-
+            "placeholder": "belopp"
           }]
         },
         {
           "id": 9,
-          "title": "Home Insurance",
-          "helpText": "Home insurance is the fee you pay for insurance for your house or apartment.",
+          "title": "Arbetsresor",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
             "name": "Home_Insurance",
-            "placeholder": "amount"
+            "placeholder": "belopp"
           }]
         },
         {
           "id": 10,
-          "title": "Broadband",
-          "helpText": "Broadband fee is the sum you pay for your internet access.",
+          "title": "Hemförsäkring",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
             "name": "Broadband",
-            "placeholder": "amount"
+            "placeholder": "belopp"
           }]
         },
         {
           "id": 11,
-          "title": "Childcare",
-          "helpText": "Childcare is the money you pay for pre-school.",
+          "title": "Fackföreningsavgift och avgift för arbetslöshetskassa",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
             "name": "Childcare",
-            "placeholder": "amount"
+            "placeholder": "belopp"
+          }]
+        }
+      ]
+    },
+    {
+      "section": "familyStatus",
+      "sectionTitle": "Familjeförhållande",
+      "description": "De uppgifter du matar in om hushållets medlemmar avgör vilka belopp som hämtas från riksnormen. Om du inte anger något hämtas beloppet för ensamstående utan barn.",
+      "inputs": [{
+          "id": 1,
+          "type": "radio",
+          "title": "hushållets vuxna medlemmar",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
+          "userInputs": [{
+            "title": "Jag är ensamstående",
+            "key": "single"
+          }, {
+            "title": "Jag är sammanboende (med vuxen)",
+            "key": "withAdult"
           }]
         },
         {
-          "id": 12,
-          "title": "Dental Care",
-          "helpText": "Dental care is the money you pay for visits to the dentist.",
+          "id": 2,
+          "title": "Fyll i hur många barn som bor hos dig",
+          "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
-            "type": "number",
-            "name": "Dental_Care",
-            "placeholder": "amount"
-          }]
-        },
-        {
-          "id": 13,
-          "title": "Medicine And Healthcare",
-          "helpText": "Medicine and healthcare could for example be money you pay to visit a doctor or to pay for prescription drugs.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Medicine_And_Healthcare",
-            "placeholder": "amount"
-          }]
-        },
-
-        {
-          "id": 14,
-          "title": "Home loan",
-          "helpText": "Home loan is a loan for a house or an apartment you have purchased.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Home_loan",
-            "placeholder": "amount"
-          }]
-        },
-
-        {
-          "id": 15,
-          "title": "Travel Fees",
-          "helpText": "Travel fees is what you spend on public transportation, for example tickets or monthly pass for Skånetrafiken. ",
-          "userInputs": [{
-            "type": "number",
-            "name": "Travel_Fees",
-            "placeholder": "amount"
-          }]
-        },
-
-        {
-          "id": 16,
-          "title": "Unions Fees And A-kassa",
-          "helpText": "Union fee is the monthly cost to be a union member. If you pay for a-kassa, don’t forget to add in that cost.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Unions_Fees_And_A-kassa",
-            "placeholder": "amount"
-          }]
-        },
-
-        {
-          "id": 17,
-          "title": "Other Expenses",
-          "helpText": "If you have any other expenses plaese fill that in here. This can be, for example, debts you have with rent, electricity or childcare, fees for garbage collection or fees for water and sewage.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Other_Expenses",
-            "placeholder": "amount"
+            "type": "select",
+            "name": "how_many_children",
+            "options": [{
+                "title": "0-1 år",
+                "key": "0-1"
+              },
+              {
+                "title": "1-2 år",
+                "key": "1-2"
+              },
+              {
+                "title": "3 år",
+                "key": "3"
+              },
+              {
+                "title": "4-6 år",
+                "key": "4-6"
+              },
+              {
+                "title": "7-10 år",
+                "key": "7-10"
+              },
+              {
+                "title": "11-14 år",
+                "key": "11-14"
+              },
+              {
+                "title": "15-18 år",
+                "key": "15-18"
+              },
+              {
+                "title": "19-20 år, går i skolan",
+                "key": "19-20"
+              }
+            ]
           }]
         }
       ]
@@ -234,246 +244,8 @@
   "steppersSteps": {
     "incomeStepTitle": "Income",
     "expensesStepTitle": "Expenses",
-    "summaryStepTitle": "Summary"
-
-  }
-}, {
-  "language": "arabic",
-  "title": " اختبار ما إذا كان يمكنك الحصول على المساعدات المالية",
-  "defaultActiveSection": 2,
-  "sections": [{
-      "section": "الدخل",
-      "description": "for us to be able to figure out if you have the right to financial aid, we need to know your income for the next 30 days. you don't need to enter mony you receive from Försäkringskassan,CSN,skatteverket or a-kassa. pleas chose the option that apply to you",
-      "inputs": [{
-          "id": 1,
-          "title": "Salary",
-          "helpText": "Salary is mony you receive for work that you do",
-          "checked": true,
-          "userInputs": [{
-              "type": "number",
-              "name": "Salary",
-              "placeholder": "amount",
-              "defaultValue": 5000
-            },
-            {
-              "name": "Salary_date",
-              "type": "date"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "title": "Part of rent",
-          "helpText": "Part of rent means that you are getting help to pay your apartment or house rent rent, for example, if you share your home with someone else",
-          "checked": true,
-          "userInputs": [{
-              "type": "number",
-              "name": "Part_of_rent",
-              "placeholder": "amount",
-              "defaultValue": 999999999999
-            },
-            {
-              "name": "Part_of_rent_date",
-              "type": "date"
-
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "title": "Part of electricity",
-          "helpText": "Part of electricity bill means that you are getting help to pay for your electricity bill, fill in the amount that you receive",
-          "userInputs": [{
-              "type": "number",
-              "name": "Part_of_electricity",
-              "placeholder": "amount"
-            },
-            {
-              "name": "SPart_of_electricity_date",
-              "type": "date"
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "title": "Pension from another Country",
-          "helpText": "Pension from another country means you are receiving mony from pension found outside of sweden, fill in the amount you receive",
-          "userInputs": [{
-              "type": "number",
-              "name": "Pension_from_another_Country",
-              "placeholder": "amount"
-            },
-            {
-              "name": "Pension_from_another_Country_date",
-              "type": "date"
-
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "title": "Borrowed or loaned mony",
-          "helpText": "Borrowed or loaned mony is mony you borrow from someone else, or mony you have loaned out that is being repaid to you as cash, swish or transaction to you bank account, fill in the amount you receive",
-          "userInputs": [{
-              "type": "number",
-              "name": "Borrowed_or_loaned_mony",
-              "placeholder": "amount"
-            },
-            {
-              "name": "Borrowed_or_loaned_mony_date",
-              "type": "date"
-
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "title": "Other income",
-          "helpText": "if you receive mony in any other way, please fill that in here. this can be for example inherited mony, mony you receive as a gift, or mony you receive from an insurance company",
-          "userInputs": [{
-            "type": "number",
-            "name": "Other_income",
-            "placeholder": "amount"
-          }, {
-            "name": "Other_income_date",
-            "type": "date"
-          }]
-        }
-      ]
-    },
-    {
-      "section": "expenses",
-      "description": "For us to figure out if you have the right to financial aid, we need to know your expenses for the next 30 days.",
-      "inputs": [{
-          "id": 7,
-          "title": "Rent",
-          "helpText": "Rent is the money you pay for where you live. This can be a house, an apartment or a room in a house.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Rent",
-            "placeholder": "amount"
-          }]
-        },
-        {
-          "id": 8,
-          "title": "Electricity",
-          "checked": true,
-          "helpText": "If you receive an invoice for electricity fill in the amount stated on the invoice. If you receive two invoices, one for energy network fees and one for the actual electricity usage, fill in the total sum for both.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Electricity",
-            "placeholder": "amount",
-            "defaultValue": 8000
-
-          }]
-        },
-        {
-          "id": 9,
-          "title": "Home Insurance",
-          "helpText": "Home insurance is the fee you pay for insurance for your house or apartment.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Home_Insurance",
-            "placeholder": "amount"
-          }]
-        },
-        {
-          "id": 10,
-          "title": "Broadband",
-          "helpText": "Broadband fee is the sum you pay for your internet access.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Broadband",
-            "placeholder": "amount"
-          }]
-        },
-        {
-          "id": 11,
-          "title": "Childcare",
-          "helpText": "Childcare is the money you pay for pre-school.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Childcare",
-            "placeholder": "amount"
-          }]
-        },
-        {
-          "id": 12,
-          "title": "Dental Care",
-          "helpText": "Dental care is the money you pay for visits to the dentist.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Dental_Care",
-            "placeholder": "amount"
-          }]
-        },
-        {
-          "id": 13,
-          "title": "Medicine And Healthcare",
-          "helpText": "Medicine and healthcare could for example be money you pay to visit a doctor or to pay for prescription drugs.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Medicine_And_Healthcare",
-            "placeholder": "amount"
-          }]
-        },
-
-        {
-          "id": 14,
-          "title": "Home loan",
-          "helpText": "Home loan is a loan for a house or an apartment you have purchased.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Home_loan",
-            "placeholder": "amount"
-          }]
-        },
-
-        {
-          "id": 15,
-          "title": "Travel Fees",
-          "helpText": "Travel fees is what you spend on public transportation, for example tickets or monthly pass for Skånetrafiken. ",
-          "userInputs": [{
-            "type": "number",
-            "name": "Travel_Fees",
-            "placeholder": "amount"
-          }]
-        },
-
-        {
-          "id": 16,
-          "title": "Unions Fees And A-kassa",
-          "helpText": "Union fee is the monthly cost to be a union member. If you pay for a-kassa, don’t forget to add in that cost.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Unions_Fees_And_A-kassa",
-            "placeholder": "amount"
-          }]
-        },
-
-        {
-          "id": 17,
-          "title": "Other Expenses",
-          "helpText": "If you have any other expenses plaese fill that in here. This can be, for example, debts you have with rent, electricity or childcare, fees for garbage collection or fees for water and sewage.",
-          "userInputs": [{
-            "type": "number",
-            "name": "Other_Expenses",
-            "placeholder": "amount"
-          }]
-        }
-      ]
-    }
-  ],
-  "buttons": {
-    "resetBtn": "Reset",
-    "finish": "Finish",
-    "next": "Next",
-    "back": "Back"
-  },
-  "steppersSteps": {
-    "incomeStepTitle": "Income",
-    "expensesStepTitle": "Expenses",
-    "summaryStepTitle": "Summary"
+    "summaryStepTitle": "Summary",
+    "familyStatus": "Family Status"
 
   }
 }]

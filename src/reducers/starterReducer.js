@@ -3,9 +3,10 @@ import {} from "../actions/types";
 const INITIAL_STATE = {
   appLanguageData: languageData.find(({
     language
-  }) => language === "english"),
+  }) => language === "swedish"),
   calculate: [],
   defaultActiveSection: 2,
+  defaultSteps: []
 
 };
 export default (state = INITIAL_STATE, action) => {
@@ -32,48 +33,57 @@ export default (state = INITIAL_STATE, action) => {
           ...state.appLanguageData,
           sections: n
         }
-      }
-      case 'resetValue':
-        const x = state.appLanguageData.sections.map((sec) => {
-          if (sec.section === action.payload.section) {
-            sec.inputs.map((inp) => {
-              if (inp.id === action.payload.id) {
-                inp.checked = !action.payload.checked
-                inp.userInputs.map((d) => d.defaultValue = '')
-                return inp;
-              }
+      };
+    case 'resetValue':
+      const x = state.appLanguageData.sections.map((sec) => {
+        if (sec.section === action.payload.section) {
+          sec.inputs.map((inp) => {
+            if (inp.id === action.payload.id) {
+              inp.checked = !action.payload.checked
+              inp.userInputs.map((d) => d.defaultValue = '')
               return inp;
-            })
-          }
-          return sec
-        })
-        return {
-          ...state, appLanguageData: {
-            ...state.appLanguageData,
-            sections: x
-          }
+            }
+            return inp;
+          })
         }
-        case 'calculate':
-          const calculate = state.appLanguageData.sections.reduce((acc, d) => {
-            const foundType = acc.find(a => a.section === d.section);
-            if (!foundType) {
-              acc.push({
-                section: d.section,
-                inputs: d.inputs.filter(({
-                  checked
-                }) => checked)
-              })
-            }
-            return acc;
-          }, [])
-          return {
-            ...state, calculate
-          }
-          case 'editMode':
-            return {
-              ...state, defaultActiveSection: action.payload
-            }
-            default:
-              return state
+        return sec
+      })
+      return {
+        ...state, appLanguageData: {
+          ...state.appLanguageData,
+          sections: x
+        }
+      };
+    case 'calculate':
+      const calculate = state.appLanguageData.sections.reduce((acc, d) => {
+        const foundType = acc.find(a => a.section === d.section);
+        if (!foundType) {
+          acc.push({
+            section: d.section,
+            inputs: d.inputs.filter(({
+              checked
+            }) => checked)
+          })
+        }
+        return acc;
+      }, [])
+      return {
+        ...state, calculate
+      };
+    case 'editMode':
+      return {
+        ...state, defaultActiveSection: action.payload
+      };
+    case 'getSteps':
+      return {
+        ...state
+      }
+      default:
+        const steps = state.appLanguageData.sections.map(({
+          sectionTitle
+        }) => sectionTitle)
+        return {
+          ...state, defaultSteps: steps
+        }
   }
 }

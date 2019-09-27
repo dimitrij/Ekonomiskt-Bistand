@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { connect } from 'react-redux'
 import { changeValue } from '../../actions/startAction'
+
 const CssTextField = withStyles({
   root: {
     '& .MuiOutlinedInput-root': {
@@ -14,12 +15,8 @@ const CssTextField = withStyles({
   },
 })(TextField);
 
-const FromInput = ({ input: { name, type, placeholder, defaultValue, }, id, section, changeValue, setChecked, isChecked, resetValue }) => {
-  let today = new Date().toJSON().slice(0, 10);
-  const dateToday = today.slice(0, 4) + '-'
-    + today.slice(5, 7) + '-'
-    + today.slice(8, 10);
-  const [value, setValue] = useState(defaultValue ? defaultValue : type === 'date' ? dateToday : '')
+const FromInput = ({ input: { name, type, placeholder, defaultValue, options }, id, section, changeValue, setChecked, isChecked, resetValue }) => {
+  const [value, setValue] = useState(defaultValue ? defaultValue : '')
   useEffect(() => {
     return () => {
       if (type === 'number' && (value === 0 || value === '')) {
@@ -31,12 +28,12 @@ const FromInput = ({ input: { name, type, placeholder, defaultValue, }, id, sect
   /*eslint-enable */
   return <CssTextField
     required
-    style={{ width: type === 'date' ? '50%' : '100%', ...inputStyle }}
+    style={{ ...inputStyle }}
     id={name}
-    label={type === 'date' ? null : placeholder}
+    label={placeholder}
     onChange={(e) => {
       setValue(type === 'date' ? e.target.value : parseInt(e.target.value));
-      changeValue({ id, section, name, value: type === 'date' ? e.target.value : parseInt(e.target.value) })
+      changeValue({ id, section, name, value: parseInt(e.target.value) })
     }}
     type={type}
     name={name}
@@ -44,6 +41,8 @@ const FromInput = ({ input: { name, type, placeholder, defaultValue, }, id, sect
     variant="outlined"
     value={value}
   />
+
+
 
 }
 const mapStateToProps = ({ appLanguageData }) => ({ appLanguageData })
