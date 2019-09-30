@@ -4,14 +4,15 @@ import {
   CHANGE_VALUE,
   RESET_VALUE,
   CALCULATE,
-  EDIT_MODE
+  EDIT_MODE,
+  RESET
 } from "../actions/types";
 const INITIAL_STATE = {
   appLanguageData: languageData.find(({
     language
   }) => language === "swedish"),
   calculate: [],
-  defaultActiveSection: 2,
+  defaultActiveSection: 0,
   defaultSteps: [],
 };
 export default (state = INITIAL_STATE, action) => {
@@ -170,97 +171,25 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state
       }
+      case RESET:
+        return state = {
+          appLanguageData: languageData.find(({
+            language
+          }) => language === "swedish"),
+          calculate: [],
+          defaultActiveSection: 0,
+          defaultSteps: languageData.find(({
+            language
+          }) => language === "swedish").sections.map(({
+            sectionTitle
+          }) => sectionTitle)
+        }
       default:
-        const steps = state.appLanguageData.sections.map(({
+        const step = state.appLanguageData.sections.map(({
           sectionTitle
         }) => sectionTitle)
         return {
-          ...state, defaultSteps: steps
+          ...state, defaultSteps: step
         }
   }
 }
-
-
-
-
-
-// const calc = (e) => {
-//   var values = new Object();
-//   var antal = new Object();
-//   var sumThisRound = 0;
-//   var sumforMembersThisRound = 0;
-
-//   //if($(e).val()/1!=$(e).val())
-//   //	return false;
-
-//   aValues['0'] = 3090; //ensamstående	
-//   aValues['1'] = 5570; //sambo			
-//   aValues['2'] = 2130; //under 1 år ggr antal barn
-//   aValues['3'] = 2380; //1-2 år
-//   aValues['4'] = 2120;
-//   aValues['5'] = 2380;
-//   aValues['6'] = 2990;
-//   aValues['7'] = 3440;
-//   aValues['8'] = 3880;
-//   aValues['9'] = 3910; //15-18 år och ungdomar som är över 18 år och går på gymnasiet
-
-//   //totalt personer i hushållet ej ggr börjar med en person
-//   antal['1'] = 990; //ensamstående
-//   antal['2'] = 1100; //sambo	
-//   antal['3'] = 1380;
-//   antal['4'] = 1570;
-//   antal['5'] = 1810;
-//   antal['6'] = 2050;
-//   antal['7'] = 2220;
-//   antal['8'] = 170;
-
-
-
-
-// var parent = e.parentNode.parentNode.parentNode;
-// var cont = parent.id.replace(/.*calc-([\w-]+).*/, "$1");
-
-
-// var result = $(parent).find('p.summery strong span');
-// var sum = $("input[name^=" + cont + "]").sum();
-
-// if (cont == "block2") {
-
-//   var nOfC = $(e).val();
-
-//   general.familySize = parseInt(sum);
-//   var checkVal = parseInt($('input[name=rbg1]:checked').val());
-//   general.familySize = general.familySize + checkVal + 1;
-
-//   if (general.familySize > 8) {
-//     sumforMembersThisRound += parseInt((general.familySize - 7) * antal['8']);
-//     sumforMembersThisRound += parseInt(antal['7']);
-//   } else if (general.familySize == 8) {
-//     sumforMembersThisRound += parseInt(antal['7']);
-//     sumforMembersThisRound += parseInt(antal['8']);
-//   } else {
-//     sumforMembersThisRound += parseInt(antal[general.familySize]);
-//   }
-
-//   //för de vuxna
-//   sumThisRound += parseInt(aValues[checkVal]);
-
-//   $(e).parents("#calc-block2").find(':input').each(function (i) {
-//     if (!$(this).hasClass("rbg")) {
-//       if (this.value != 0)
-//         sumThisRound += parseInt(this.value) * (aValues[i]);
-//     }
-//   });
-
-//   $(result).html(parseInt(sumforMembersThisRound + sumThisRound));
-
-// } else {
-//   if (sum != 0) {
-//     $(result).html(sum);
-//   } else {
-//     $(result).html("0");
-//   }
-// }
-
-
-//}

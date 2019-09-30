@@ -3,7 +3,8 @@ import {
   CHANGE_VALUE,
   RESET_VALUE,
   CALCULATE,
-  EDIT_MODE
+  EDIT_MODE,
+  RESET
 
 } from "./types";
 
@@ -53,5 +54,10 @@ export const ediAmount = (index) => {
   return ({
     type: EDIT_MODE,
     payload: index
+  })
+}
+export const reset = () => {
+  return ({
+    type: RESET
   })
 }

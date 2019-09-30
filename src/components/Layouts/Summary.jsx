@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { doCalculate, ediAmount } from '../../actions/startAction'
-
 const useStyles = makeStyles(theme => {
   return ({
     root: {
@@ -69,7 +68,7 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
       }
       <div>
         <h3>Result</h3>
-        {all > 0 ? resultText.no.replace("#####", all) : resultText.yes.replace("#####", all * -1)}
+        <div dangerouslySetInnerHTML={{ __html: all > 0 ? resultText.no.replace("#####", '<span style="color:green">' + all + '</span>') : resultText.yes.replace("#####", '<span style="color:red">' + all * -1 + '</span>') }} />
       </div>
     </div >
   );

@@ -2,7 +2,7 @@
   "name": "socialbidrag",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://dimitrij.github.io/Ekonomiskt-Bistand",
+  "homepage": "https://dimitrij.github.io/Ekonomiskt-Bistand",
   "dependencies": {
     "@material-ui/core": "^4.4.3",
     "gh-pages": "^2.1.1",

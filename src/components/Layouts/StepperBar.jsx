@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Form from './Form'
 import Summary from './Summary';
 import { connect } from 'react-redux'
-import { ediAmount } from '../../actions/startAction'
+import { ediAmount, reset } from '../../actions/startAction'
 const useStyles = makeStyles(theme => {
   return ({
     root: {
@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => {
 
 
 
-const StepperBar = ({ defaultSteps, ediAmount, defaultActiveSection, appLanguageData: { buttons: { resetBtn, next, finish, back }, steppersSteps: { incomeStepTitle, expensesStepTitle, summaryStepTitle, familyStatus }, sections } }) => {
+const StepperBar = ({ defaultSteps, ediAmount, reset, defaultActiveSection, appLanguageData: { buttons: { resetBtn, next, finish, back }, steppersSteps: { incomeStepTitle, expensesStepTitle, summaryStepTitle, familyStatus }, sections } }) => {
   const getSteps = () => {
     return [...defaultSteps, summaryStepTitle];
   }
@@ -80,6 +80,7 @@ const StepperBar = ({ defaultSteps, ediAmount, defaultActiveSection, appLanguage
 
   const handleReset = () => {
     setActiveStep(0);
+    reset();
   };
   useEffect(() => {
     setActiveStep(defaultActiveSection)
@@ -132,4 +133,4 @@ const StepperBar = ({ defaultSteps, ediAmount, defaultActiveSection, appLanguage
   );
 }
 const mapStateToProps = ({ appLanguageData, defaultActiveSection, defaultSteps }) => ({ appLanguageData, defaultActiveSection, defaultSteps })
-export default connect(mapStateToProps, { ediAmount })(StepperBar)
+export default connect(mapStateToProps, { ediAmount, reset })(StepperBar)
