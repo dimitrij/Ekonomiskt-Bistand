@@ -54,7 +54,7 @@ const IOSSwitch = withStyles(theme => ({
       color: theme.palette.common.white,
 
       '& + $track': {
-        backgroundColor: '#D34F98',
+        backgroundColor: theme.palette.primary.main,
         opacity: 1,
         borderWidth: 0
       },
@@ -63,7 +63,7 @@ const IOSSwitch = withStyles(theme => ({
       border: 'none'
     },
     '&$focusVisible $thumb': {
-      color: '#D34F98',
+      color: theme.palette.primary.main,
       border: '6px solid #fff',
     },
   },
@@ -96,15 +96,10 @@ const IOSSwitch = withStyles(theme => ({
     />
   );
 });
-
-
-
 const FormSwitch = ({ input: { title, userInputs, helperText, id, checked, }, section, resetValue }) => {
   const classes = useStyles();
   const [isChecked, setChecked] = useState(checked || false)
   const [modalStatus, setModalStatus] = useState(false)
-
-
   return (
     <>
       <FormControlLabel
@@ -136,7 +131,6 @@ const FormSwitch = ({ input: { title, userInputs, helperText, id, checked, }, se
   )
 
 }
-
 
 export default connect(null, { resetValue })(FormSwitch);
 

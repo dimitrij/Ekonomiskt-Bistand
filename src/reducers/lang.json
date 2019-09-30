@@ -204,42 +204,51 @@
           "userInputs": [{
               "name": "0-1",
               "type": "number",
-              "placeholder": "0-1 år"
+              "placeholder": "0-1 år",
+              "max": 9,
+              "defaultValue": 5
             },
             {
               "name": "1-2",
               "type": "number",
-              "placeholder": "1-2 år"
+              "placeholder": "1-2 år",
+              "max": 9
             },
             {
               "name": "3",
               "type": "number",
-              "placeholder": "3 år"
+              "placeholder": "3 år",
+              "max": 9
             },
             {
               "name": "4-6",
               "type": "number",
-              "placeholder": "4-6 år"
+              "placeholder": "4-6 år",
+              "max": 9
             },
             {
               "name": "7-10",
               "type": "number",
-              "placeholder": "7-10 år"
+              "placeholder": "7-10 år",
+              "max": 9
             },
             {
               "name": "11-14",
               "type": "number",
-              "placeholder": "11-14 år"
+              "placeholder": "11-14 år",
+              "max": 9
             },
             {
               "name": "15-18",
               "type": "number",
-              "placeholder": "15-18 år"
+              "placeholder": "15-18 år",
+              "max": 9
             },
             {
               "name": "19-20",
               "type": "number",
-              "placeholder": "19-20 år, går i skolan"
+              "placeholder": "19-20 år, går i skolan",
+              "max": 9
             }
           ]
         }

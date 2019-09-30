@@ -1,5 +1,9 @@
 import {
   CHANGE_LANGUAGE,
+  CHANGE_VALUE,
+  RESET_VALUE,
+  CALCULATE,
+  EDIT_MODE
 
 } from "./types";
 
@@ -16,7 +20,7 @@ export const changeValue = ({
   value
 }) => {
   return {
-    type: 'changeValue',
+    type: CHANGE_VALUE,
     payload: {
       id,
       section,
@@ -31,7 +35,7 @@ export const resetValue = ({
   checked
 }) => {
   return {
-    type: 'resetValue',
+    type: RESET_VALUE,
     payload: {
       section,
       id,
@@ -41,13 +45,13 @@ export const resetValue = ({
 }
 export const doCalculate = () => {
   return ({
-    type: 'calculate'
+    type: CALCULATE
   })
 }
 
 export const ediAmount = (index) => {
   return ({
-    type: "editMode",
+    type: EDIT_MODE,
     payload: index
   })
 }

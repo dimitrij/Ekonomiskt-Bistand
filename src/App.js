@@ -17,10 +17,7 @@ const outerTheme = createMuiTheme({
     },
   },
 });
-console.log(parsed);
-
-function App(props) {
-  console.log(window.location.search)
+function App() {
   return (
     <ThemeProvider theme={outerTheme}>
       <Container fixed style={{ minHeight: '100vh', display: 'flex', alignItems: 'stretch', flexDirection: 'column' }}>
@@ -34,7 +31,3 @@ function App(props) {
 }
 const mapStateToProps = ({ infoSection }) => ({ infoSection })
 export default connect(mapStateToProps)(App);
-
-
-//ThemeProvider
-//Typography

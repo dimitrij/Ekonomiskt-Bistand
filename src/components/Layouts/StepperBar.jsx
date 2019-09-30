@@ -110,6 +110,7 @@ const StepperBar = ({ defaultSteps, ediAmount, defaultActiveSection, appLanguage
               {
                 activeStep !== steps.length - 1 ?
                   sections.map((section, index) => section.sectionTitle === steps[activeStep] ? <Form key={index} data={section} /> : null)
+
                   : <Summary />
               }
               <div className={classes.buttonsHolder}>

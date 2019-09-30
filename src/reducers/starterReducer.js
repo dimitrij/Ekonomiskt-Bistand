@@ -1,16 +1,22 @@
 import languageData from './lang';
-import {} from "../actions/types";
+import {
+  CHANGE_LANGUAGE,
+  CHANGE_VALUE,
+  RESET_VALUE,
+  CALCULATE,
+  EDIT_MODE
+} from "../actions/types";
 const INITIAL_STATE = {
   appLanguageData: languageData.find(({
     language
   }) => language === "swedish"),
   calculate: [],
-  defaultActiveSection: 0,
+  defaultActiveSection: 2,
   defaultSteps: [],
 };
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'changeValue':
+    case CHANGE_VALUE:
       const n = state.appLanguageData.sections.map((sec) => {
         if (sec.section === action.payload.section) {
           sec.inputs.map((inp) => {
@@ -43,7 +49,7 @@ export default (state = INITIAL_STATE, action) => {
           sections: n
         }
       };
-    case 'resetValue':
+    case RESET_VALUE:
       const x = state.appLanguageData.sections.map((sec) => {
         if (sec.section === action.payload.section) {
           sec.inputs.map((inp) => {
@@ -70,7 +76,7 @@ export default (state = INITIAL_STATE, action) => {
           sections: x
         }
       };
-    case 'calculate':
+    case CALCULATE:
       const calculate = state.appLanguageData.sections.reduce((acc, d) => {
         const foundType = acc.find(a => a.section === d.section);
         if (!foundType) {
@@ -136,7 +142,7 @@ export default (state = INITIAL_STATE, action) => {
             section.inputs.push({
               title: d.allFamilyCountText + ' * ' + antalFamilyNumber,
               userInputs: [{
-                defaultValue: antalFamilyNumber > 8 ? (-1 * (((antalFamilyNumber - 7) * antal['8']) + (antal['7']))) : antalFamilyNumber === 8 ? (-1 * antal['7']) + (antal['8']) : (-1 * antal[antalFamilyNumber.toString()]),
+                defaultValue: antalFamilyNumber > 8 ? (-1 * (((antalFamilyNumber - 7) * antal['8']) + (antal['7']))) : antalFamilyNumber === 8 ? -1 * ((antal['7']) + (antal['8'])) : (-1 * antal[antalFamilyNumber.toString()]),
                 name: ''
               }]
             })
@@ -156,7 +162,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state, calculate
       };
-    case 'editMode':
+    case EDIT_MODE:
       return {
         ...state, defaultActiveSection: action.payload
       };
