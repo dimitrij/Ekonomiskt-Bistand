@@ -22,7 +22,6 @@ const FromInput = ({
 }) => {
   const [value, setValue] = useState(defaultValue ? defaultValue : '')
   useEffect(() => {
-    console.log('unmount')
     return () => {
       if (type === 'number' && (value === 0 || value === '')) {
         resetValue({ section, id, checked: isChecked })
