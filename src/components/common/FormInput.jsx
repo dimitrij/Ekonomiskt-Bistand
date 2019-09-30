@@ -15,7 +15,11 @@ const CssTextField = withStyles({
   },
 })(TextField);
 
-const FromInput = ({ input: { name, type, placeholder, defaultValue, options }, id, section, changeValue, setChecked, isChecked, resetValue }) => {
+
+const FromInput = ({
+  input: { name, type, placeholder, defaultValue, },
+  id, section, changeValue, setChecked, isChecked, resetValue
+}) => {
   const [value, setValue] = useState(defaultValue ? defaultValue : '')
   useEffect(() => {
     return () => {
@@ -24,15 +28,16 @@ const FromInput = ({ input: { name, type, placeholder, defaultValue, options }, 
       }
     }
     /*eslint-disable */
-  }, [value])
-  /*eslint-enable */
+  }, [value]
+    /*eslint-enable */
+  )
+
   return <CssTextField
-    required
     style={{ ...inputStyle }}
     id={name}
     label={placeholder}
     onChange={(e) => {
-      setValue(type === 'date' ? e.target.value : parseInt(e.target.value));
+      setValue(parseInt(e.target.value));
       changeValue({ id, section, name, value: parseInt(e.target.value) })
     }}
     type={type}
@@ -41,7 +46,6 @@ const FromInput = ({ input: { name, type, placeholder, defaultValue, options }, 
     variant="outlined"
     value={value}
   />
-
 
 
 }
@@ -55,4 +59,5 @@ const inputStyle = {
   fontWeight: 500,
   fontSize: '16px',
   lineHeight: '19px',
+  width: '100%'
 }

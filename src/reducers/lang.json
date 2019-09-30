@@ -1,6 +1,10 @@
 [{
   "language": "swedish",
   "title": " Testa om du kan få försörjningsstöd ",
+  "resultText": {
+    "yes": "Beräkningen visar att dina månadsinkomster är ##### kr lägre än den nivå som kan ge rätt till försörjningsstöd. Det kan betyda att du får försörjningsstöd om du ansöker. Socialtjänsten gör en individuell bedömning och kan ta hänsyn till annat än ekonomiska faktorer. Kontakta socialtjänsten i din kommun om du vill ansöka om försörjningsstöd eller ha mer information.",
+    "no": "Beräkningen visar att dina månadsinkomster är ##### kr högre än den nivå som kan ge rätt till försörjningsstöd. Det kan betyda att du inte får försörjningsstöd om du ansöker. Socialtjänsten gör en individuell bedömning och kan ta hänsyn till annat än ekonomiska faktorer. Kontakta socialtjänsten i din kommun om du vill ansöka om försörjningsstöd eller ha mer information."
+  },
   "defaultActiveSection": 2,
   "sections": [{
       "section": "income",
@@ -32,7 +36,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Part_of_rent",
+            "name": "sick_activities_replacement",
             "placeholder": "belopp"
           }]
         },
@@ -42,7 +46,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Part_of_electricity",
+            "name": "Sickness_tillskott",
             "placeholder": "belopp"
           }]
         },
@@ -52,7 +56,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Pension_from_another_Country",
+            "name": "parental_allowance",
             "placeholder": "belopp"
           }]
         },
@@ -62,7 +66,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Borrowed_or_loaned_mony",
+            "name": "pension",
             "placeholder": "belopp"
           }]
         },
@@ -72,7 +76,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Other_income",
+            "name": "maintenance_grants",
             "placeholder": "belopp"
           }]
         },
@@ -82,7 +86,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Other_income",
+            "name": "child_benefit",
             "placeholder": "belopp"
           }]
         },
@@ -92,7 +96,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Other_income",
+            "name": "student_aid",
             "placeholder": "belopp"
           }]
         },
@@ -102,7 +106,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Other_income",
+            "name": "housing_benefit",
             "placeholder": "belopp"
           }]
         }, {
@@ -111,7 +115,7 @@
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "type": "number",
-            "name": "Other_income",
+            "name": "Others",
             "placeholder": "belopp"
           }]
         }
@@ -175,62 +179,69 @@
     },
     {
       "section": "familyStatus",
-      "sectionTitle": "Familjeförhållande",
+      "sectionTitle": "Familje förhållande",
       "description": "De uppgifter du matar in om hushållets medlemmar avgör vilka belopp som hämtas från riksnormen. Om du inte anger något hämtas beloppet för ensamstående utan barn.",
+      "allFamilyCountText": "familjemedlemmar Antal ",
       "inputs": [{
           "id": 1,
           "type": "radio",
           "title": "hushållets vuxna medlemmar",
+          "defaultValue": "1",
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
             "title": "Jag är ensamstående",
-            "key": "single"
+            "key": "0"
           }, {
             "title": "Jag är sammanboende (med vuxen)",
-            "key": "withAdult"
+            "key": "1"
           }]
         },
         {
           "id": 2,
           "title": "Fyll i hur många barn som bor hos dig",
+          "checked": false,
           "helpText": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", ",Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "],
           "userInputs": [{
-            "type": "select",
-            "name": "how_many_children",
-            "options": [{
-                "title": "0-1 år",
-                "key": "0-1"
-              },
-              {
-                "title": "1-2 år",
-                "key": "1-2"
-              },
-              {
-                "title": "3 år",
-                "key": "3"
-              },
-              {
-                "title": "4-6 år",
-                "key": "4-6"
-              },
-              {
-                "title": "7-10 år",
-                "key": "7-10"
-              },
-              {
-                "title": "11-14 år",
-                "key": "11-14"
-              },
-              {
-                "title": "15-18 år",
-                "key": "15-18"
-              },
-              {
-                "title": "19-20 år, går i skolan",
-                "key": "19-20"
-              }
-            ]
-          }]
+              "name": "0-1",
+              "type": "number",
+              "placeholder": "0-1 år"
+            },
+            {
+              "name": "1-2",
+              "type": "number",
+              "placeholder": "1-2 år"
+            },
+            {
+              "name": "3",
+              "type": "number",
+              "placeholder": "3 år"
+            },
+            {
+              "name": "4-6",
+              "type": "number",
+              "placeholder": "4-6 år"
+            },
+            {
+              "name": "7-10",
+              "type": "number",
+              "placeholder": "7-10 år"
+            },
+            {
+              "name": "11-14",
+              "type": "number",
+              "placeholder": "11-14 år"
+            },
+            {
+              "name": "15-18",
+              "type": "number",
+              "placeholder": "15-18 år"
+            },
+            {
+              "name": "19-20",
+              "type": "number",
+              "placeholder": "19-20 år, går i skolan"
+            }
+          ]
         }
       ]
     }

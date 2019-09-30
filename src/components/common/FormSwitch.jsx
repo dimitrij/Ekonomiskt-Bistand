@@ -99,7 +99,7 @@ const IOSSwitch = withStyles(theme => ({
 
 
 
-const FormSwitch = ({ title, userInputs, helperText, id, checked, section, resetValue }) => {
+const FormSwitch = ({ input: { title, userInputs, helperText, id, checked, }, section, resetValue }) => {
   const classes = useStyles();
   const [isChecked, setChecked] = useState(checked || false)
   const [modalStatus, setModalStatus] = useState(false)

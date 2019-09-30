@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
+import { connect } from 'react-redux'
+import { changeValue } from '../../actions/startAction'
 
 
 const useStyles = makeStyles(theme => ({
@@ -14,6 +15,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     flex: 1,
     borderRadius: 20,
+    margin: '30px 0',
     '& .MuiFormControlLabel-root': {
       margin: 0
     }
@@ -30,7 +32,6 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     color: 'white',
     flex: 1,
-    padding: '5px 10px',
     display: 'flex',
     justifyContent: 'center',
     '& svg.MuiSvgIcon-root': {
@@ -43,31 +44,33 @@ const useStyles = makeStyles(theme => ({
   active: {
     background: theme.palette.primary.main,
     boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12)',
-    transform: 'translateY(-1px)',
+    transform: 'translateY(-2px)',
     transition: 'all .3s',
   },
   notActive: {
     background: theme.palette.primary.mainLight,
-    color: '#929292e0'
+    color: '#929292e0',
+    transform: 'scale(0.998)',
+    transition: 'all .3s',
   }
 }));
-const FormRadio = ({ userInputs }) => {
-  const classes = useStyles();
-  const [value, setValue] = React.useState('withAdult');
 
-  console.log(classes)
+
+const FormRadio = ({ input, input: { userInputs, id, defaultValue }, section, changeValue }) => {
+  const classes = useStyles();
+  const [value, setValue] = React.useState(defaultValue);
   const handleChange = event => {
     setValue(event.target.value);
+    changeValue({ id, section, value: event.target.value })
   };
-
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-      <div style={{ width: '70%', display: 'flex' }}>
+      <div style={{ width: '80%', display: 'flex', fontSize: 10 }}>
         <RadioGroup
           aria-label="gender"
           name="gender1"
           value={value}
-          onChange={handleChange}
+          onChange={(e) => { handleChange(e); }}
           className={classes.root}>
           {userInputs.map(({ key, title }, index) => <FormControlLabel
             className={classes.Radio}
@@ -87,34 +90,32 @@ const FormRadio = ({ userInputs }) => {
         </RadioGroup>
       </div>
     </div >)
-
-
 }
 
-export default FormRadio;
+const mapStateToProps = ({ appLanguageData }) => ({ appLanguageData })
+export default connect(mapStateToProps, { changeValue })(FormRadio);
+const commonStyle = {
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  left: 0,
+  bottom: 0,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: 12,
+  textAlign: 'center'
+}
 const styles = {
   right: {
-    borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    left: 0,
-    bottom: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+    borderTopRightRadius: 4,
+    borderBottomRightRadius: 4,
+    ...commonStyle
   },
   left: {
-    borderTopLeftRadius: 10,
-    borderBottomLeftRadius: 10,
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    left: 0,
-    bottom: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+    borderTopLeftRadius: 4,
+    borderBottomLeftRadius: 4,
+    ...commonStyle
+
   }
 }

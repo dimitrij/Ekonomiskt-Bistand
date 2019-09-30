@@ -18,10 +18,17 @@ const useStyles = makeStyles(theme => {
         borderRadius: '50%',
       },
       '& .MuiStepConnector-line': {
-        borderColor: theme.palette.primary.main[50]
+        borderColor: theme.palette.primary.main,
       }, '& .MuiStepConnector-alternativeLabel': {
-        left: 'calc(-50% + 14px)',
-        right: 'calc(50% + 14px)',
+        left: 'calc(-50% + 10px)',
+        right: 'calc(50% + 10px)',
+      },
+      '& .MuiStepLabel-label.MuiStepLabel-alternativeLabel': {
+
+        fontSize: 12,
+        overflowWrap: 'break-word',
+        wordWrap: 'break-word'
+
       }
     },
     bodyHolder: {
@@ -88,7 +95,7 @@ const StepperBar = ({ defaultSteps, ediAmount, defaultActiveSection, appLanguage
       {activeStep !== steps.length && <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map(label => (
           <Step key={label}>
-            <StepLabel >{label}</StepLabel>
+            <StepLabel>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>}
@@ -103,7 +110,6 @@ const StepperBar = ({ defaultSteps, ediAmount, defaultActiveSection, appLanguage
               {
                 activeStep !== steps.length - 1 ?
                   sections.map((section, index) => section.sectionTitle === steps[activeStep] ? <Form key={index} data={section} /> : null)
-
                   : <Summary />
               }
               <div className={classes.buttonsHolder}>

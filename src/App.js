@@ -6,14 +6,11 @@ import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { connect } from 'react-redux';
-import pink from '@material-ui/core/colors/pink';
-console.log(pink)
-
 const outerTheme = createMuiTheme({
   palette: {
     primary: {
       main: '#D34F98',
-      mainLight: '#FCEFF0',
+      mainLight: '#fbf8f8',
       second: '#712082'
     },
   },
