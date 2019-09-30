@@ -6,16 +6,21 @@ import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { connect } from 'react-redux';
+import queryString from 'query-string'
+const parsed = queryString.parse(window.location.search);
 const outerTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#D34F98',
-      mainLight: '#fbf8f8',
-      second: '#712082'
+      main: parsed.main || '#D34F98',
+      mainLight: parsed.mainLight || '#fbf8f8',
+      second: parsed.second || '#712082'
     },
   },
 });
-function App() {
+console.log(parsed);
+
+function App(props) {
+  console.log(window.location.search)
   return (
     <ThemeProvider theme={outerTheme}>
       <Container fixed style={{ minHeight: '100vh', display: 'flex', alignItems: 'stretch', flexDirection: 'column' }}>
