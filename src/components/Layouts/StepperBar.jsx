@@ -108,33 +108,28 @@ const StepperBar = ({
         ))}
       </Stepper>}
       <div>
-        {activeStep === steps.length ? (
-          <div className={classes.resultHolder}>
-            <Typography className={classes.instructions}>All steps completed</Typography>
-            <Button onClick={handleReset}>{resetBtn}</Button>
-          </div>
-        ) : (
-            <div className={classes.bodyHolder}>
-              {
-                activeStep !== steps.length - 1 ?
-                  sections.map((section, index) => section.sectionTitle === steps[activeStep] ? <Form key={index} data={section} /> : null)
+        {
+          <div className={classes.bodyHolder}>
+            {
+              activeStep !== steps.length - 1 ?
+                sections.map((section, index) => section.sectionTitle === steps[activeStep] ? <Form key={index} data={section} /> : null)
 
-                  : <Summary />
-              }
-              <div className={classes.buttonsHolder}>
-                <Button
-                  disabled={activeStep === 0}
-                  onClick={handleBack}
-                  className={classes.backButton}
-                >
-                  {back}
-                </Button>
-                <Button variant="contained" color="primary" onClick={handleNext}>
-                  {activeStep === steps.length - 1 ? finish : next}
-                </Button>
-              </div>
+                : <Summary />
+            }
+            <div className={classes.buttonsHolder}>
+              <Button
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                className={classes.backButton}
+              >
+                {back}
+              </Button>
+              <Button variant="contained" color="primary" onClick={() => { activeStep !== steps.length - 1 ? handleNext() : handleReset() }}>
+                {activeStep === steps.length - 1 ? finish : next}
+              </Button>
             </div>
-          )}
+          </div>
+        }
       </div>
     </div >
   );
