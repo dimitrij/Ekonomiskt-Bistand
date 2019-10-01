@@ -4,7 +4,9 @@ import FormSwitch from '../common/FormSwitch'
 import FormRadio from '../common/FormRadio'
 
 
-const IncomeForm = ({ data: { description, inputs, section } }) => {
+const IncomeForm = ({ data }) => {
+  const { description, inputs, section } = data
+
   return (
     <>
       <p style={{ fontWeight: 'bold', color: 'black' }}>{description}</p>

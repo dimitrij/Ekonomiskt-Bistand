@@ -1,4 +1,3 @@
-import languageData from './lang';
 import {
   CHANGE_LANGUAGE,
   CHANGE_VALUE,
@@ -7,13 +6,18 @@ import {
   EDIT_MODE,
   RESET
 } from "../actions/types";
+import lang from './lang.js'
 const INITIAL_STATE = {
-  appLanguageData: languageData.find(({
+  appLanguageData: lang.find(({
     language
-  }) => language === "swedish"),
+  }) => language === 'swedish'),
   calculate: [],
   defaultActiveSection: 0,
-  defaultSteps: [],
+  defaultSteps: lang.find(({
+    language
+  }) => language === 'swedish').sections.map(({
+    sectionTitle
+  }) => sectionTitle),
 };
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -110,6 +114,7 @@ export default (state = INITIAL_STATE, action) => {
               section: d.sectionTitle,
               inputs: []
             };
+
             d.inputs.map((inp) => {
               if (inp.type === 'radio') {
                 total = +values[inp.defaultValue]
@@ -172,24 +177,41 @@ export default (state = INITIAL_STATE, action) => {
         ...state
       }
       case RESET:
-        return state = {
-          appLanguageData: languageData.find(({
-            language
-          }) => language === "swedish"),
-          calculate: [],
-          defaultActiveSection: 0,
-          defaultSteps: languageData.find(({
-            language
-          }) => language === "swedish").sections.map(({
-            sectionTitle
-          }) => sectionTitle)
-        }
-      default:
-        const step = state.appLanguageData.sections.map(({
-          sectionTitle
-        }) => sectionTitle)
+        //reset
+        console.log(state);
+        const nx = state.appLanguageData.sections.map((sec) => {
+          sec.inputs.map((inp) => {
+            inp.userInputs.map((usInp) => {
+              if (inp.type !== 'radio') {
+                inp.checked = false;
+                usInp.defaultValue = ''
+                return {
+                  ...usInp,
+                  ...inp
+                }
+              } else if (inp.type === 'radio') {
+                inp.defaultValue = '0';
+                return {
+                  ...usInp,
+                  ...inp
+                }
+              }
+              return usInp
+            })
+            return inp
+          })
+
+          return sec
+
+        })
+        console.log(nx)
         return {
-          ...state, defaultSteps: step
-        }
+          ...INITIAL_STATE, appLanguageData: {
+            ...state.appLanguageData,
+            sections: nx
+          }
+        };
+      default:
+        return state
   }
 }

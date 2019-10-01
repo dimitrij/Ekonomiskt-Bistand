@@ -105,7 +105,8 @@ const commonStyle = {
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: 12,
-  textAlign: 'center'
+  textAlign: 'center',
+  zIndex: 100
 }
 const styles = {
   right: {

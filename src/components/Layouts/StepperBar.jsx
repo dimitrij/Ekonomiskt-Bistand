@@ -16,6 +16,8 @@ const useStyles = makeStyles(theme => {
       '& svg': {
         color: 'lightgray',
         borderRadius: '50%',
+        border: '1px solid white',
+        zIndex: 99
       },
       '& .MuiStepConnector-line': {
         borderColor: theme.palette.primary.main,
@@ -63,7 +65,13 @@ const useStyles = makeStyles(theme => {
 
 
 
-const StepperBar = ({ defaultSteps, ediAmount, reset, defaultActiveSection, appLanguageData: { buttons: { resetBtn, next, finish, back }, steppersSteps: { incomeStepTitle, expensesStepTitle, summaryStepTitle, familyStatus }, sections } }) => {
+const StepperBar = ({
+  reset__, appLanguageData, defaultSteps, ediAmount, reset, defaultActiveSection,
+  appLanguageData: {
+    buttons: { resetBtn, next, finish, back },
+    steppersSteps: { incomeStepTitle, expensesStepTitle, summaryStepTitle, familyStatus },
+    sections
+  } }) => {
   const getSteps = () => {
     return [...defaultSteps, summaryStepTitle];
   }
@@ -79,7 +87,6 @@ const StepperBar = ({ defaultSteps, ediAmount, reset, defaultActiveSection, appL
   };
 
   const handleReset = () => {
-    setActiveStep(0);
     reset();
   };
   useEffect(() => {
@@ -132,5 +139,5 @@ const StepperBar = ({ defaultSteps, ediAmount, reset, defaultActiveSection, appL
     </div >
   );
 }
-const mapStateToProps = ({ appLanguageData, defaultActiveSection, defaultSteps }) => ({ appLanguageData, defaultActiveSection, defaultSteps })
+const mapStateToProps = ({ appLanguageData, defaultActiveSection, defaultSteps, reset__ }) => ({ appLanguageData, defaultActiveSection, defaultSteps, reset__ })
 export default connect(mapStateToProps, { ediAmount, reset })(StepperBar)

@@ -1,6 +1,6 @@
 import React from 'react';
 import AppHeader from './components/Layouts/Header';
-import StatusBar from './components/Layouts/StepperBar';
+import StepperBar from './components/Layouts/StepperBar';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -24,7 +24,7 @@ function App() {
         <Typography component="div" color="primary">
           <AppHeader />
         </Typography>
-        <StatusBar />
+        <StepperBar />
       </Container>
     </ThemeProvider>
   );
