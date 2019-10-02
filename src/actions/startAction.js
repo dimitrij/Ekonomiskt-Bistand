@@ -56,6 +56,12 @@ export const ediAmount = (index) => {
     payload: index
   })
 }
+export const changeLanguage = (lang) => {
+  return ({
+    type: CHANGE_LANGUAGE,
+    payload: lang
+  })
+}
 export const reset = () => {
   return ({
     type: RESET

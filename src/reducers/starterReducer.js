@@ -8,14 +8,25 @@ import {
 } from "../actions/types";
 import lang from './lang.js'
 const INITIAL_STATE = {
-  appLanguageData: lang.find(({
+  defaultLanguage: {
+    name: 'swedish',
+    icon: '🇸🇪'
+  },
+  supportedLanguages: lang.map(({
     language
-  }) => language === 'swedish'),
+  }) => language),
+  appLanguageData: lang.find(({
+    language: {
+      name
+    }
+  }) => name === 'swedish'),
   calculate: [],
   defaultActiveSection: 0,
   defaultSteps: lang.find(({
-    language
-  }) => language === 'swedish').sections.map(({
+    language: {
+      name
+    }
+  }) => name === 'swedish').sections.map(({
     sectionTitle
   }) => sectionTitle),
 };
@@ -178,39 +189,69 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state
       }
-      case RESET:
-        const nx = state.appLanguageData.sections.map((sec) => {
-          sec.inputs.map((inp) => {
-            inp.userInputs.map((usInp) => {
-              if (inp.type !== 'radio') {
-                inp.checked = false;
-                usInp.defaultValue = ''
-                return {
-                  ...usInp,
-                  ...inp
-                }
-              } else if (inp.type === 'radio') {
-                inp.defaultValue = '0';
-                return {
-                  ...usInp,
-                  ...inp
-                }
-              }
-              return usInp
-            })
-            return inp
-          })
-
-          return sec
-
-        })
-        return {
-          ...INITIAL_STATE, appLanguageData: {
-            ...state.appLanguageData,
-            sections: nx
+      case CHANGE_LANGUAGE:
+        console.log(lang.find(({
+          language: {
+            name
           }
-        };
-      default:
-        return state
+        }) => name === action.payload))
+        return {
+          ...state,
+          defaultLanguage: lang.find(({
+              language: {
+                name
+              }
+            }) => name === action.payload).language,
+            appLanguageData: lang.find(({
+              language: {
+                name
+              }
+            }) => name === action.payload),
+            defaultSteps: lang.find(({
+              language: {
+                name
+              }
+            }) => name === action.payload).sections.map(({
+              sectionTitle
+            }) => sectionTitle)
+        }
+        case RESET:
+          const nx = state.appLanguageData.sections.map((sec) => {
+            sec.inputs.map((inp) => {
+              inp.userInputs.map((usInp) => {
+                if (inp.type !== 'radio') {
+                  inp.checked = false;
+                  usInp.defaultValue = ''
+                  return {
+                    ...usInp,
+                    ...inp
+                  }
+                } else if (inp.type === 'radio') {
+                  inp.defaultValue = '0';
+                  return {
+                    ...usInp,
+                    ...inp
+                  }
+                }
+                return usInp
+              })
+              return inp
+            })
+
+            return sec
+
+          })
+          return {
+            ...state,
+            appLanguageData: {
+                ...state.appLanguageData,
+                sections: nx,
+
+              },
+              calculate: [],
+              defaultActiveSection: 0,
+          };
+        default:
+          return state
   }
 }

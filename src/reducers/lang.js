@@ -1,5 +1,8 @@
 const lang = [{
-    language: 'swedish',
+    language: {
+      name: 'swedish',
+      icon: '🇸🇪'
+    },
     title: ' Testa om du kan få försörjningsstöd ',
     resultText: {
       yes: 'Beräkningen visar att dina månadsinkomster är ##### kr lägre än den nivå som kan ge rätt till försörjningsstöd. Det kan betyda att du får försörjningsstöd om du ansöker. Socialtjänsten gör en individuell bedömning och kan ta hänsyn till annat än ekonomiska faktorer. Kontakta socialtjänsten i din kommun om du vill ansöka om försörjningsstöd eller ha mer information.',
@@ -359,7 +362,10 @@ const lang = [{
     }
   },
   {
-    language: 'arabic',
+    language: {
+      name: 'arabic',
+      icon: '🇸🇦'
+    },
     title: ' اختبار ما اذا كان يمكنك الحصول على دعم الدخل ',
     resultText: {
       yes: 'يوضح الحساب أن دخلك الشهري هو ##### أقل من المستوى الذي يمكن أن يؤهلك لدعم المدفوعات. قد يعني هذا أنك تتلقى مدفوعات الدعم إذا تقدمت بطلب. تقوم الخدمة الاجتماعية بإجراء تقييم فردي ويمكن أن تأخذ في الاعتبار غير العوامل المالية. اتصل بالخدمات الاجتماعية في بلديتك إذا كنت ترغب في التقدم للحصول على دعم الرعاية الاجتماعية أو الحصول على مزيد من المعلومات.',

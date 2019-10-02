@@ -100,9 +100,9 @@ const StepperBar = ({
   return (
     <div className={classes.root}>
       {activeStep !== steps.length && <Stepper activeStep={activeStep} alternativeLabel>
-        {steps.map(label => (
+        {steps.map((label, index) => (
           <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+            <StepLabel onClick={() => setActiveStep(index)}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>}
