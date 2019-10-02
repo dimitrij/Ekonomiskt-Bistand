@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Ekonomiskt-Bistand/precache-manifest.5bcbffa9d2f5ed6c0b2190b1dadde3e3.js"
+  "/Ekonomiskt-Bistand/precache-manifest.4a4d7a38f10ec9be6d482e7f70617cb3.js"
 );
 
 self.addEventListener('message', (event) => {
