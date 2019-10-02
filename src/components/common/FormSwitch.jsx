@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => {
     iconButton: {
       width: 25,
       height: 25,
-      marginLeft: 10,
+      margin: '0 10px',
       display: 'flex',
       alignItems: 'center',
       padding: 0,
@@ -96,7 +96,7 @@ const IOSSwitch = withStyles(theme => ({
     />
   );
 });
-const FormSwitch = ({ input, input: { title, userInputs, helpText, id, checked, SvgKey }, section, resetValue }) => {
+const FormSwitch = ({ leftToRight, input: { title, userInputs, helpText, id, checked, SvgKey }, section, resetValue }) => {
   const classes = useStyles();
   const [isChecked, setChecked] = useState(checked || false)
   const [modalStatus, setModalStatus] = useState(false)
@@ -105,6 +105,7 @@ const FormSwitch = ({ input, input: { title, userInputs, helpText, id, checked, 
       <FormControlLabel
         labelPlacement="start"
         className={classes.FormControl}
+        style={{ flexDirection: leftToRight ? 'row-reverse' : 'row' }}
         control={
           <IOSSwitch
             checked={isChecked}
@@ -113,7 +114,7 @@ const FormSwitch = ({ input, input: { title, userInputs, helpText, id, checked, 
             value={checked}
           />
         }
-        label={<div className={classes.label}>
+        label={<div className={classes.label} style={{ flexDirection: leftToRight ? 'row' : 'row-reverse' }}>
           <h3>{title}</h3>
           <IconButton onClick={() => setModalStatus(true)} aria-label="?" size="small" className={classes.iconButton} >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

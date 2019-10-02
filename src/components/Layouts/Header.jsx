@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
       display: 'none'
     },
     '& .MuiSelect-selectMenu': {
-      padding: 0,
+      padding: '5px 0',
       display: 'flex',
       justifyContent: 'center',
     }

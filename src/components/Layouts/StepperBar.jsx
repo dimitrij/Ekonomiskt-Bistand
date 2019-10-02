@@ -65,12 +65,14 @@ const useStyles = makeStyles(theme => {
 
 
 const StepperBar = ({
-  reset__, appLanguageData, defaultSteps, ediAmount, reset, defaultActiveSection,
+  defaultSteps, ediAmount, reset, defaultActiveSection,
   appLanguageData: {
     buttons: { resetBtn, next, finish, back },
     steppersSteps: { incomeStepTitle, expensesStepTitle, summaryStepTitle, familyStatus },
-    sections
+    sections,
+    leftToRight
   } }) => {
+  console.log(leftToRight)
   const getSteps = () => {
     return [...defaultSteps, summaryStepTitle];
   }
@@ -111,8 +113,7 @@ const StepperBar = ({
           <div className={classes.bodyHolder}>
             {
               activeStep !== steps.length - 1 ?
-                sections.map((section, index) => section.sectionTitle === steps[activeStep] ? <Form key={index} data={section} /> : null)
-
+                sections.map((section, index) => section.sectionTitle === steps[activeStep] ? <Form key={index} data={section} leftToRight={leftToRight} /> : null)
                 : <Summary />
             }
             <div className={classes.buttonsHolder}>

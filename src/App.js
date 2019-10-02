@@ -17,10 +17,10 @@ const outerTheme = createMuiTheme({
     },
   },
 });
-function App() {
+function App({ appLanguageData: { leftToRight } }) {
   return (
     <ThemeProvider theme={outerTheme}>
-      <Container fixed style={{ minHeight: '100vh', display: 'flex', alignItems: 'stretch', flexDirection: 'column' }}>
+      <Container fixed style={{ minHeight: '100vh', display: 'flex', alignItems: 'stretch', flexDirection: 'column', textAlign: leftToRight ? 'left' : 'right' }}>
         <Typography component="div" color="primary">
           <AppHeader />
         </Typography>
@@ -29,5 +29,5 @@ function App() {
     </ThemeProvider>
   );
 }
-const mapStateToProps = ({ infoSection }) => ({ infoSection })
+const mapStateToProps = ({ appLanguageData }) => ({ appLanguageData })
 export default connect(mapStateToProps)(App);

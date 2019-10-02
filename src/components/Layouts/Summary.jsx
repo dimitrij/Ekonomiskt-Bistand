@@ -23,13 +23,14 @@ const useStyles = makeStyles(theme => {
     }
   })
 });
-const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultText } }) => {
+const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultText, leftToRight } }) => {
   const classes = useStyles()
   useEffect(() => { doCalculate(); ediAmount(0) },
     /*eslint-disable */
     []
     /*eslint-enable */
   )
+  console.log(leftToRight)
   let all = 0;
   return (
     <div>
@@ -41,11 +42,10 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
             <div className={classes.mainHolder}>{inputs.map(({ title, userInputs }, index) => {
               return (
                 <div key={index}
-                  className={classes.rowDiv}>
+                  className={classes.rowDiv} style={{ flexDirection: !leftToRight ? 'row-reverse' : 'row' }}>
                   <div style={{ flex: 4 }}>{title}</div>
                   <div style={{ flex: 2 }}>
                     {userInputs.map(({ defaultValue, name }) => {
-                      console.log(section)
                       total += defaultValue;
                       section !== 'income' ?
                         all -= defaultValue : all += defaultValue
@@ -53,7 +53,7 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
                     }
                     )}
                   </div>
-                  <div style={{ flex: 1, textAlign: 'center' }} onClick={() => { console.log(SectionIndex); ediAmount(SectionIndex) }}>   <svg width="33" height="32" viewBox="0 0 33 32" style={{ border: 'none' }} fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div style={{ flex: 1, textAlign: 'center' }} onClick={() => { ediAmount(SectionIndex) }}>   <svg width="33" height="32" viewBox="0 0 33 32" style={{ border: 'none' }} fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M23.6621 11.3301L24.7266 10.2754C25.2539 9.74805 25.2734 9.17188 24.7949 8.68359L24.4141 8.29297C23.9355 7.81445 23.3496 7.86328 22.8223 8.38086L21.7578 9.42578L23.6621 11.3301ZM11.6992 23.2734L22.7246 12.248L20.8301 10.3633L9.80469 21.3691L8.85742 23.6738C8.74023 23.9668 9.04297 24.2891 9.33594 24.1816L11.6992 23.2734Z" fill="#E5E5E5" />
                   </svg></div>
                 </div>
