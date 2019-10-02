@@ -111,7 +111,8 @@ export default (state = INITIAL_STATE, action) => {
             let total = 0;
             let antalFamilyNumber = 0;
             let section = {
-              section: d.sectionTitle,
+              sectionTitle: d.sectionTitle,
+              section: d.section,
               inputs: []
             };
 
@@ -122,7 +123,7 @@ export default (state = INITIAL_STATE, action) => {
                 section.inputs.push({
                   title: inp.title + ' * ' + (parseInt(inp.defaultValue) + 1),
                   userInputs: [{
-                    defaultValue: (-1 * values[inp.defaultValue]),
+                    defaultValue: (values[inp.defaultValue]),
                     name: inp.title + ' * ' + (parseInt(inp.defaultValue) + 1)
                   }]
                 })
@@ -134,7 +135,7 @@ export default (state = INITIAL_STATE, action) => {
                     section.inputs.push({
                       title: usInp.placeholder + ' * ' + usInp.defaultValue,
                       userInputs: [{
-                        defaultValue: (-1 * (values[usInp.name] * parseInt(usInp.defaultValue))),
+                        defaultValue: ((values[usInp.name] * parseInt(usInp.defaultValue))),
                         name: usInp.title
                       }]
                     })
@@ -148,14 +149,15 @@ export default (state = INITIAL_STATE, action) => {
             section.inputs.push({
               title: d.allFamilyCountText + ' * ' + antalFamilyNumber,
               userInputs: [{
-                defaultValue: antalFamilyNumber > 8 ? (-1 * (((antalFamilyNumber - 7) * antal['8']) + (antal['7']))) : antalFamilyNumber === 8 ? -1 * ((antal['7']) + (antal['8'])) : (-1 * antal[antalFamilyNumber.toString()]),
+                defaultValue: antalFamilyNumber > 8 ? ((((antalFamilyNumber - 7) * antal['8']) + (antal['7']))) : antalFamilyNumber === 8 ? ((antal['7']) + (antal['8'])) : (antal[antalFamilyNumber.toString()]),
                 name: ''
               }]
             })
             acc.push(section)
           } else {
             acc.push({
-              section: d.sectionTitle,
+              section: d.section,
+              sectionTitle: d.sectionTitle,
               inputs: d.inputs.filter(({
                 checked
               }) => checked)
@@ -177,8 +179,6 @@ export default (state = INITIAL_STATE, action) => {
         ...state
       }
       case RESET:
-        //reset
-        console.log(state);
         const nx = state.appLanguageData.sections.map((sec) => {
           sec.inputs.map((inp) => {
             inp.userInputs.map((usInp) => {
@@ -204,7 +204,6 @@ export default (state = INITIAL_STATE, action) => {
           return sec
 
         })
-        console.log(nx)
         return {
           ...INITIAL_STATE, appLanguageData: {
             ...state.appLanguageData,

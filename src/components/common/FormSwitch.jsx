@@ -96,7 +96,7 @@ const IOSSwitch = withStyles(theme => ({
     />
   );
 });
-const FormSwitch = ({ input: { title, userInputs, helperText, id, checked, }, section, resetValue }) => {
+const FormSwitch = ({ input, input: { title, userInputs, helpText, id, checked, SvgKey }, section, resetValue }) => {
   const classes = useStyles();
   const [isChecked, setChecked] = useState(checked || false)
   const [modalStatus, setModalStatus] = useState(false)
@@ -126,7 +126,7 @@ const FormSwitch = ({ input: { title, userInputs, helperText, id, checked, }, se
       {isChecked &&
         userInputs.map((input, index) => <FromInput input={input} key={index} id={id} section={section} setChecked={setChecked} resetValue={resetValue} isChecked={isChecked} />
         )}
-      <InfoModal modalStatus={modalStatus} setModalStatus={setModalStatus} info={helperText} title={title} id={id} />
+      <InfoModal modalStatus={modalStatus} setModalStatus={setModalStatus} helpText={helpText} title={title} id={id} SvgKey={SvgKey} />
     </>
   )
 

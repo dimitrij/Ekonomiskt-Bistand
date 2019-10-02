@@ -33,11 +33,11 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
   let all = 0;
   return (
     <div>
-      {calculate.map(({ section, inputs }, SectionIndex) => {
+      {calculate.map(({ section, sectionTitle, inputs }, SectionIndex) => {
         let total = 0;
         return (
           <div key={SectionIndex} className={classes.root}>
-            <h3>{section}</h3>
+            <h3>{sectionTitle}</h3>
             <div className={classes.mainHolder}>{inputs.map(({ title, userInputs }, index) => {
               return (
                 <div key={index}
@@ -45,9 +45,11 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
                   <div style={{ flex: 4 }}>{title}</div>
                   <div style={{ flex: 2 }}>
                     {userInputs.map(({ defaultValue, name }) => {
+                      console.log(section)
                       total += defaultValue;
-                      all += defaultValue
-                      return defaultValue < 0 ? defaultValue * -1 : defaultValue
+                      section !== 'income' ?
+                        all -= defaultValue : all += defaultValue
+                      return defaultValue
                     }
                     )}
                   </div>
@@ -59,7 +61,7 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
             })}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 0' }}>
                 <h3 style={{ flex: 4 }}>Total</h3>
-                <h3 style={{ flex: 2 }}>{total < 0 ? total * -1 : total}</h3>
+                <h3 style={{ flex: 2 }}>{total}</h3>
                 <div style={{ flex: 1 }}></div>
               </div>
             </div>

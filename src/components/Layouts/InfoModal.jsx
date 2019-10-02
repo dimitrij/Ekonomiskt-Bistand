@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     borderBottom: '1px solid lightgray'
   },
   title: {
-    color: '#D34F98',
+    color: theme.palette.primary.main,
     width: '50%',
     textAlign: 'center'
   },
@@ -60,17 +60,20 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 99
+    zIndex: 99,
+    boxShadow: 'rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 2px 1px -1px'
   },
   modalBodyBottom: {
     flex: 1,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    flexDirection: 'column',
+    textAlign: 'center'
   }
 }));
 
-const InfoModal = ({ title, info, id, modalStatus, setModalStatus }) => {
+const InfoModal = ({ title, helpText, id, SvgKey, modalStatus, setModalStatus }) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   useEffect(() => {
@@ -96,7 +99,7 @@ const InfoModal = ({ title, info, id, modalStatus, setModalStatus }) => {
           <div className={classes.modalBody}>
             <div className={classes.modalBodyTop}>
               <div style={{ position: 'absolute', height: '100%', width: '100%', overflow: 'hidden', opacity: 0.5 }}>
-                {[10, 200, 30, 40, 500, 60, 7, 1, 2, 3, 4, 5, 6, 7].map((i, index) => {
+                {Array(99).fill('').map((i, index) => {
                   function rand(x) {
                     return Math.round(Math.random() * x);
                   }
@@ -109,19 +112,17 @@ const InfoModal = ({ title, info, id, modalStatus, setModalStatus }) => {
                       transform: `rotate(-${rand(360)}deg)`,
                     };
                   }
-                  return (<div key={index} style={{ position: 'absolute', ...getModalStyle() }}><SVG id={id} height="20" width="20" /></div>)
+                  return (<div key={index} style={{ position: 'absolute', ...getModalStyle() }}><SVG SvgKey={SvgKey} height="20" width="20" /></div>)
                 })
                 }
               </div>
 
               <div className={classes.mainIconHolder}>
-                <SVG id={id} />
+                <SVG SvgKey={SvgKey} />
               </div>
             </div>
-            <div className={classes.modalBodyBottom}>
-              <p id="modal-description" style={{ textAlign: 'center' }}>
-                {info}
-              </p>
+            <div className={classes.modalBodyBottom} id="modal-description">
+              {helpText.map((text, index) => <p key={index}>{text}</p>)}
             </div>
           </div>
         </div>
