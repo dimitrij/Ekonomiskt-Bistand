@@ -5,7 +5,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { changeLanguage } from '../../actions/startAction'
+import { changeLanguage, reset } from '../../actions/startAction'
 import { connect } from 'react-redux';
 const useStyles = makeStyles(theme => ({
   root: {
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
-const AppHeader = ({ defaultLanguage: { name, icon }, supportedLanguages, changeLanguage, appLanguageData: { title } }) => {
+const AppHeader = ({ defaultLanguage: { name, icon }, supportedLanguages, changeLanguage, reset, appLanguageData: { title } }) => {
   const classes = useStyles();
   return (
     <>
@@ -51,7 +51,7 @@ const AppHeader = ({ defaultLanguage: { name, icon }, supportedLanguages, change
         <Select
           className={classes.editedSelect}
           value={name}
-          onChange={(e) => changeLanguage(e.target.value)}
+          onChange={(e) => { reset(); changeLanguage(e.target.value) }}
           inputProps={{
             name: 'Language',
             id: 'filled-age-simple',
@@ -66,6 +66,6 @@ const AppHeader = ({ defaultLanguage: { name, icon }, supportedLanguages, change
 }
 
 const mapStateToProps = ({ defaultLanguage, supportedLanguages, appLanguageData }) => ({ defaultLanguage, supportedLanguages, appLanguageData })
-export default connect(mapStateToProps, { changeLanguage })(AppHeader);
+export default connect(mapStateToProps, { changeLanguage, reset })(AppHeader);
 
 

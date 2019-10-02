@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "579fb45317910004349756e953ea8c70",
+    "revision": "17029ace4ddd4b9f2e03b8fbc8f2a184",
     "url": "/Ekonomiskt-Bistand/index.html"
   },
   {
-    "revision": "d440ba7a4d38d9a14feb",
+    "revision": "3ab68a9ab8211788ff8d",
     "url": "/Ekonomiskt-Bistand/static/css/main.34de6062.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Ekonomiskt-Bistand/static/js/2.8ce98786.chunk.js"
   },
   {
-    "revision": "d440ba7a4d38d9a14feb",
-    "url": "/Ekonomiskt-Bistand/static/js/main.d702969f.chunk.js"
+    "revision": "3ab68a9ab8211788ff8d",
+    "url": "/Ekonomiskt-Bistand/static/js/main.7b8d8547.chunk.js"
   },
   {
     "revision": "e1634958682dc4075926",

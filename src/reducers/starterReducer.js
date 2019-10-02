@@ -246,7 +246,6 @@ export default (state = INITIAL_STATE, action) => {
             appLanguageData: {
                 ...state.appLanguageData,
                 sections: nx,
-
               },
               calculate: [],
               defaultActiveSection: 0,
