@@ -725,6 +725,370 @@ const lang = [{
       summaryStepTitle: 'النتيجة النهائية',
       familyStatus: 'حالة الاسرة'
     }
+  },
+  {
+    language: {
+      name: 'Persian',
+      icon: '🇮🇷'
+    },
+    leftToRight: false,
+    title: "اگر می توانید پشتیبانی درآمد دریافت کنید ، آزمایش کنید",
+    resultText: {
+      yes: 'محاسبه نشان می دهد که درآمد ماهانه شما ##### زیر سطح است که می تواند شما را برای پشتیبانی از پرداخت واجد شرایط کند. این ممکن است بدان معنی باشد که در صورت درخواست ، پرداختهای پشتیبانی دریافت می کنید. خدمات اجتماعی ارزیابی فردی را انجام می دهد و می تواند عوامل غیر مالی را در نظر بگیرد. اگر می خواهید درخواست پشتیبانی رفاه کنید یا اطلاعات بیشتری کسب کنید با خدمات اجتماعی شهرداری خود تماس بگیرید.',
+      no: 'این محاسبه نشان می دهد که درآمد ماهانه شما از ##### بالاتر از سطح واجد شرایط پرداخت پشتیبانی است. این ممکن است به این معنی باشد که در صورت درخواست ، پرداخت پشتیبانی دریافت نمی کنید. خدمات اجتماعی ارزیابی فردی را انجام می دهد و می تواند عوامل غیر مالی را در نظر بگیرد. اگر می خواهید درخواست پشتیبانی رفاه کنید یا اطلاعات بیشتری کسب کنید با خدمات اجتماعی شهرداری خود تماس بگیرید.'
+    },
+    sections: [{
+        section: 'income',
+        sectionTitle: 'درآمد',
+        description: 'کل درآمد خانوار در هر ماه را در کادر مربوطه وارد کنید. مبالغ باید پس از مالیات خالص و گرد شوند تا به مبلغ کامل برسند. درآمدی که مناسب نیست را می توان با هم اضافه کرد. اگر هیچ درآمدی تعیین نکردید ، به صورت صفر (0) محاسبه می شود.',
+        inputs: [{
+            id: 1,
+            SvgKey: 'Salary',
+            title: 'حقوق',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Salary',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 2,
+            SvgKey: 'Unions_Fees_And_A-kassa',
+            title: 'مزایای بیکاری',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Unions_Fees_And_A-kassa',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 3,
+            SvgKey: 'Sick_Activities_Replacement',
+            title: 'جبران بیماری و فعالیت',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Sick_Activities_Replacement',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 4,
+            SvgKey: 'Sickness_Benefit',
+            title: 'وضعیت بیماری',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Sickness_Benefit',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 5,
+            SvgKey: 'Parental_Allowance',
+            title: 'والدین',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Parental_Allowance',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 6,
+            SvgKey: 'Pension',
+            title: 'بازنشستگی',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Pension',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 7,
+            SvgKey: 'Maintenance_Grants',
+            title: 'پشتیبانی / کمک هزینه تعمیر و نگهداری',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'maintenance_grants',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 8,
+            SvgKey: 'Parental_Allowance',
+            title: 'منافع کودک',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Child_Benefit',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 9,
+            SvgKey: 'Pension',
+            title: 'پشتیبانی مطالعه',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Student_Aid',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 10,
+            SvgKey: 'Maintenance_Grants',
+            title: 'پشتیبانی مسکن',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Housing_Benefit',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 11,
+            SvgKey: 'Others',
+            title: 'سایر درآمد',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Others',
+              placeholder: 'مقدار'
+            }]
+          }
+        ]
+      },
+      {
+        section: 'expenses',
+        sectionTitle: 'خرج کردن',
+        description: 'مخارج ماهیانه خانوار را در کادر ارائه شده وارد کنید. همه مقادیر در کرون هستند. اگر هیچ هزینه ای را تعیین نکنید ، آنها به صورت صفر (0) محاسبه می شوند.',
+        inputs: [{
+            id: 12,
+            SvgKey: 'Maintenance_Grants',
+            title: 'مسکن',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Rent',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 13,
+            SvgKey: 'Electricity',
+            title: 'برق',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Electricity',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 14,
+            SvgKey: 'Work_Travels',
+            title: 'حمل و نقل',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Work_Travels',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 15,
+            SvgKey: 'Maintenance_Grants',
+            title: 'بیمه خانه',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Home_Insurance',
+              placeholder: 'مقدار'
+            }]
+          },
+          {
+            id: 16,
+            SvgKey: 'Unions_Fees_And_A-kassa',
+            title: 'هزینه های اتحادیه صنفی و هزینه های صندوق بیکاری',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+              type: 'number',
+              name: 'Unemployment_Benefit_Fee_for_Unemployment_Benefit',
+              placeholder: 'مقدار'
+            }]
+          }
+        ]
+      },
+      {
+        section: 'familyStatus',
+        sectionTitle: 'خانواده',
+        description: 'اطلاعاتی که در مورد اعضای خانواده وارد می کنید ، مبالغ جمع آوری شده از استاندارد ملی را تعیین می کند. اگر چیزی را مشخص نکنید ، مبلغ اختصاص یافته به افراد مجرد و بدون فرزند جمع می شود.',
+        allFamilyCountText: 'تعداد اعضای کل خانواده',
+        inputs: [{
+            id: 1,
+            type: 'radio',
+            title: 'اعضای خانواده بزرگسال',
+            defaultValue: '1',
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+                title: 'من تنها زندگی میکنم',
+                key: '0'
+              },
+              {
+                title: 'من با یک زندگی می کنم',
+                key: '1'
+              }
+            ]
+          },
+          {
+            id: 2,
+            SvgKey: 'Family',
+            title: 'تعداد کودکانی که با شما زندگی می کنند را پر کنید',
+            checked: false,
+            helpText: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
+            ],
+            userInputs: [{
+                name: '0-1',
+                type: 'number',
+                placeholder: 'از 0 تا 1 سال',
+                max: 9
+              },
+              {
+                name: '1-2',
+                type: 'number',
+                placeholder: 'از یک تا دو سال',
+                max: 9
+              },
+              {
+                name: '3',
+                type: 'number',
+                placeholder: 'سه سال',
+                max: 9
+              },
+              {
+                name: '4-6',
+                type: 'number',
+                placeholder: 'از چهار تا شش سال',
+                max: 9
+              },
+              {
+                name: '7-10',
+                type: 'number',
+                placeholder: 'هفت تا ده سال',
+                max: 9
+              },
+              {
+                name: '11-14',
+                type: 'number',
+                placeholder: 'از یازده تا چهارده سال',
+                max: 9
+              },
+              {
+                name: '15-18',
+                type: 'number',
+                placeholder: 'از پانزده تا هجده سال',
+                max: 9
+              },
+              {
+                name: '19-20',
+                type: 'number',
+                placeholder: 'از نوزده تا بیست سال به مدرسه می روند',
+                max: 9
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    buttons: {
+      resetBtn: 'Reset',
+      finish: 'آخر',
+      next: 'بعد',
+      back: 'قبلی'
+    },
+    steppersSteps: {
+      incomeStepTitle: 'مصرف',
+      expensesStepTitle: 'هزینه ها',
+      summaryStepTitle: 'نتیجه نهایی',
+      familyStatus: 'وضعیت خانواده'
+    }
   }
 ];
 export default lang
