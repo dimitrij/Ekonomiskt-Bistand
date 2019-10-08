@@ -56,7 +56,7 @@ const FromInput = ({
     /*eslint-enable */
   )
   return (<>
-    <p style={{ inputStyle }}>{defaultValue}</p>
+    <p style={{ inputStyle }}>-{defaultValue}-</p>
     <MySlider
       valueLabelDisplay="off"
       defaultValue={parseInt(defaultValue)}
