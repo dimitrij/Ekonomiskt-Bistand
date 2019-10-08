@@ -1,29 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import { changeValue } from '../../actions/startAction'
+import { withStyles } from "@material-ui/core/styles";
+import Slider from "@material-ui/core/Slider";
 
-const CssTextField = withStyles({
-  root: {
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: '#E5E5E5',
-        borderRadius: 17.5,
+
+const MySlider = withStyles((theme) => {
+  return {
+    root: {
+      color: theme.palette.primary.main,
+      height: 8
+    },
+    thumb: {
+      height: 34,
+      width: 34,
+      backgroundColor: "#fff",
+      border: "10px solid currentColor",
+      boxShadow: "0 0 10px rgba(0,0,0,.3)",
+      marginTop: -14,
+      marginLeft: -12,
+      "&:focus,&:hover,&$active": {
+        boxShadow: "inherit"
       }
     },
-  },
-})(TextField);
-
+    active: {
+      boxShadow: "0 0 0.625rem rgba(0,0,0,.3)"
+    },
+    valueLabel: {
+      left: "calc(-50% + 4px)"
+    },
+    track: {
+      height: 8,
+      borderRadius: 4
+    },
+    rail: {
+      height: 8,
+      borderRadius: 4
+    }
+  }
+})(Slider);
 
 const FromInput = ({
-  input: { name, type, placeholder, defaultValue, max },
+  input: { name, type, placeholder, defaultValue = 0, max },
   id, section, changeValue, setChecked, isChecked, resetValue
 }) => {
-  const [value, setValue] = useState(defaultValue ? defaultValue : '')
+
   useEffect(() => {
     return () => {
-      if (type === 'number' && (value === 0 || value === '')) {
+      if (type === 'number' && (defaultValue === 0 || defaultValue === '')) {
         resetValue({ section, id, checked: isChecked })
       }
     }
@@ -32,25 +56,15 @@ const FromInput = ({
     /*eslint-enable */
   )
   return (<>
-    <CssTextField
-      style={{ ...inputStyle }}
-      id={name}
-      label={placeholder}
-      onChange={(e) => {
-        setValue(parseInt(e.target.value));
-        changeValue({ id, section, name, value: parseInt(e.target.value) })
-      }}
-      onBlur={(e) => {
-        if (parseInt(value) > 9 && max) { setValue(parseInt(9)); changeValue({ id, section, name, value: 9 }) }
-        if (parseInt(value) < 0) { setValue(parseInt(0)); changeValue({ id, section, name, value: 0 }) }
+    <p style={{ inputStyle }}>{defaultValue}</p>
+    <MySlider
+      valueLabelDisplay="off"
+      defaultValue={parseInt(defaultValue)}
+      min={0}
+      max={max ? max : 60000}
+      step={max ? 1 : 100}
+      onChange={(e, val) => { changeValue({ id, section, name, value: parseInt(val) }) }}
 
-      }}
-      value={value.toString()}
-      type={type}
-      name={name}
-      margin="normal"
-      variant="outlined"
-      InputProps={{ inputProps: { min: 0, max: max } }}
     />
   </>)
 

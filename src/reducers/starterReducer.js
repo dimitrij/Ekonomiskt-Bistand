@@ -22,78 +22,90 @@ const INITIAL_STATE = {
   }) => name === 'swedish'),
   calculate: [],
   defaultActiveSection: 0,
-  defaultSteps: lang.find(({
-    language: {
-      name
-    }
-  }) => name === 'swedish').sections.map(({
-    sectionTitle
-  }) => sectionTitle),
+  defaultSteps: ['Information'],
 };
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CHANGE_VALUE:
-      const n = state.appLanguageData.sections.map((sec) => {
-        if (sec.section === action.payload.section) {
-          sec.inputs.map((inp) => {
-            inp.userInputs.map((usInp) => {
-              if (usInp.name === action.payload.name && inp.type !== 'radio') {
-                inp.checked = true;
-                usInp.defaultValue = action.payload.value
-                return {
-                  ...usInp,
-                  ...inp
-                }
-              } else if (inp.type === 'radio' && action.payload.id === inp.id) {
-                inp.defaultValue = action.payload.value;
-                return {
-                  ...usInp,
-                  ...inp
-                }
+      const n = state.appLanguageData.sections.inputs.map((inp) => {
+        if (inp.section === action.payload.section && inp.id === action.payload.id) {
+          inp.userInputs.map((usInp) => {
+            if (usInp.name === action.payload.name && inp.type !== 'radio') {
+              inp.checked = true;
+              usInp.defaultValue = action.payload.value
+              return {
+                ...usInp,
+                ...inp
               }
-              return usInp
-            })
-            return inp
+            } else if (inp.type === 'radio' && action.payload.id === inp.id) {
+              inp.defaultValue = action.payload.value;
+              return {
+                ...usInp,
+                ...inp
+              }
+            }
+            return usInp
           })
+          return inp
         }
-        return sec
+        return inp
 
       })
       return {
         ...state, appLanguageData: {
           ...state.appLanguageData,
-          sections: n
+          sections: {
+            ...state.appLanguageData.section,
+            inputs: n
+          }
         }
       };
     case RESET_VALUE:
-      const x = state.appLanguageData.sections.map((sec) => {
-        if (sec.section === action.payload.section) {
-          sec.inputs.map((inp) => {
-            if (inp.id === action.payload.id) {
-              if (inp.userInputs.length === 1) {
-                inp.checked = !action.payload.checked;
-                inp.userInputs.map((d) => d.defaultValue = '')
-                return inp;
-              } else if (!inp.userInputs.find(({
-                  defaultValue
-                }) => defaultValue)) {
-                inp.checked = !action.payload.checked;
-                inp.userInputs.map((d) => d.defaultValue = '')
-              }
+      const x = state.appLanguageData.sections.inputs.map((inp) => {
+        if (inp.section === action.payload.section) {
+          if (inp.id === action.payload.id) {
+            if (inp.userInputs.length === 1) {
+              inp.checked = !action.payload.checked;
+              inp.userInputs.map((d) => d.defaultValue = '')
+              return inp;
+            } else if (!inp.userInputs.find(({
+                defaultValue
+              }) => defaultValue)) {
+              inp.checked = !action.payload.checked;
+              inp.userInputs.map((d) => d.defaultValue = '')
             }
-            return inp;
-          })
+          }
+          return inp;
         }
-        return sec
+        return inp
       })
       return {
         ...state, appLanguageData: {
           ...state.appLanguageData,
-          sections: x
+          sections: {
+            ...state.appLanguageData.section,
+            inputs: x
+          }
         }
       };
     case CALCULATE:
-      const calculate = state.appLanguageData.sections.reduce((acc, d) => {
+      const arr =
+        state.appLanguageData.sections.inputs.reduce((acc, d) => {
+            const foundSection = acc.find(a => a.section === d.section);
+            if (!foundSection) {
+              acc.push({
+                section: d.section,
+                sectionTitle: d.section,
+                description: d.description,
+                inputs: [d]
+              })
+            } else {
+              foundSection.inputs.push(d)
+            }
+            return acc
+          },
+          [])
+      const calculate = arr.reduce((acc, d) => {
         const foundType = acc.find(a => a.section === d.section);
         if (!foundType) {
           if (d.section === 'familyStatus') {
@@ -151,14 +163,15 @@ export default (state = INITIAL_STATE, action) => {
                       }]
                     })
                   }
+                  return usInp
                 })
 
                 total = antal[antalFamilyNumber.toString()] + total
-
               }
+              return inp
             })
             section.inputs.push({
-              title: d.allFamilyCountText + ' * ' + antalFamilyNumber,
+              title: state.appLanguageData.allFamilyCountText + ' * ' + antalFamilyNumber,
               userInputs: [{
                 defaultValue: antalFamilyNumber > 8 ? ((((antalFamilyNumber - 7) * antal['8']) + (antal['7']))) : antalFamilyNumber === 8 ? ((antal['7']) + (antal['8'])) : (antal[antalFamilyNumber.toString()]),
                 name: ''
@@ -179,22 +192,20 @@ export default (state = INITIAL_STATE, action) => {
         return acc;
       }, [])
       return {
-        ...state, calculate
+        ...state,
+        calculate
       };
     case EDIT_MODE:
       return {
-        ...state, defaultActiveSection: action.payload
+        ...state,
+        defaultActiveSection: action.payload
       };
     case 'getSteps':
       return {
         ...state
       }
       case CHANGE_LANGUAGE:
-        console.log(lang.find(({
-          language: {
-            name
-          }
-        }) => name === action.payload))
+
         return {
           ...state,
           defaultLanguage: lang.find(({

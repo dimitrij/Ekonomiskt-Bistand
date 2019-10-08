@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const FormRadio = ({ input: { userInputs, id, defaultValue }, section, changeValue }) => {
+const FormRadio = ({ input: { userInputs, id, defaultValue, section }, changeValue }) => {
 
   const classes = useStyles();
   const [value, setValue] = React.useState(defaultValue);

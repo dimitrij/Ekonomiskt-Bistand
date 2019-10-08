@@ -67,12 +67,11 @@ const useStyles = makeStyles(theme => {
 const StepperBar = ({
   defaultSteps, ediAmount, reset, defaultActiveSection,
   appLanguageData: {
-    buttons: { resetBtn, next, finish, back },
-    steppersSteps: { incomeStepTitle, expensesStepTitle, summaryStepTitle, familyStatus },
+    buttons: { next, finish, back },
+    steppersSteps: { summaryStepTitle },
     sections,
     leftToRight
   } }) => {
-  console.log(leftToRight)
   const getSteps = () => {
     return [...defaultSteps, summaryStepTitle];
   }
@@ -101,20 +100,26 @@ const StepperBar = ({
   useEffect(() => { ediAmount(activeStep) }, [activeStep, ediAmount])
   return (
     <div className={classes.root}>
-      {activeStep !== steps.length && <Stepper activeStep={activeStep} alternativeLabel>
-        {steps.map((label, index) => (
-          <Step key={label}>
-            <StepLabel onClick={() => setActiveStep(index)}>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>}
+      {activeStep !== steps.length &&
+        <Stepper activeStep={activeStep} alternativeLabel>
+          {steps.map((label, index) => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>}
       <div>
         {
           <div className={classes.bodyHolder}>
             {
               activeStep !== steps.length - 1 ?
-                sections.map((section, index) => section.sectionTitle === steps[activeStep] ? <Form key={index} data={section} leftToRight={leftToRight} /> : null)
-                : <Summary />
+                // sections.inputs.map((section, index) => section.sectionTitle === steps[activeStep] ?
+                //   <Form key={index} data={section} leftToRight={leftToRight} />
+                //   :
+                //   null)
+                <Form data={sections} leftToRight={leftToRight} />
+                :
+                <Summary />
             }
             <div className={classes.buttonsHolder}>
               <Button
@@ -134,5 +139,5 @@ const StepperBar = ({
     </div >
   );
 }
-const mapStateToProps = ({ appLanguageData, defaultActiveSection, defaultSteps, reset__ }) => ({ appLanguageData, defaultActiveSection, defaultSteps, reset__ })
+const mapStateToProps = ({ appLanguageData, defaultActiveSection, defaultSteps }) => ({ appLanguageData, defaultActiveSection, defaultSteps })
 export default connect(mapStateToProps, { ediAmount, reset })(StepperBar)

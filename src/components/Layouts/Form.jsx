@@ -5,21 +5,27 @@ import FormRadio from '../common/FormRadio'
 
 
 const IncomeForm = ({ leftToRight, data }) => {
-  const { description, inputs, section } = data
+  const { description, inputs } = data
   return (
     <>
       <p style={{ fontWeight: 'bold', color: 'black' }}>{description}</p>
       <FormGroup style={{ flexWrap: 'nowrap' }}>
-        {inputs.map((input, index) => {
-          return (
-            <div style={{ width: '100%' }} key={index}> {input.type === 'radio' ?
-              <FormRadio input={input} section={section} /> :
-              <FormSwitch input={input} section={section} leftToRight={leftToRight}
-              />
-            }
-            </div>)
+        {
+          inputs.map((input, index) => {
+            return (
+              <div style={{ width: '100%' }} key={index}>
+                {
+                  input.type === 'radio' ?
+                    <FormRadio input={input} />
+                    :
+                    <FormSwitch input={input} leftToRight={leftToRight}
+                    />
+                }
+              </div>
+            )
+          }
+          )
         }
-        )}
       </FormGroup>
     </>
   );

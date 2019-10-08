@@ -23,14 +23,17 @@ const useStyles = makeStyles(theme => {
     }
   })
 });
+
+
 const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultText, leftToRight } }) => {
   const classes = useStyles()
-  useEffect(() => { doCalculate(); ediAmount(0) },
+  useEffect(() => {
+    doCalculate(); ediAmount(0)
+  },
     /*eslint-disable */
     []
     /*eslint-enable */
   )
-  console.log(leftToRight)
   let all = 0;
   return (
     <div>
