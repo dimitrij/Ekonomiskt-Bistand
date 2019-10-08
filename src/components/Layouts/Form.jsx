@@ -6,28 +6,50 @@ import FormRadio from '../common/FormRadio'
 
 const IncomeForm = ({ leftToRight, data }) => {
   const { description, inputs } = data
+  const sections =
+    inputs.reduce((acc, d) => {
+      console.log(description)
+      const foundSection = acc.find(a => a.section === d.section);
+      if (!foundSection) {
+        acc.push({
+          section: d.section,
+          sectionTitle: d.sectionTitle,
+          description: d.description,
+          inputs: [d]
+        })
+      } else {
+        foundSection.inputs.push(d)
+      }
+      return acc
+    },
+      [])
+  console.log(sections)
   return (
-    <>
-      <p style={{ fontWeight: 'bold', color: 'black' }}>{description}</p>
-      <FormGroup style={{ flexWrap: 'nowrap' }}>
-        {
-          inputs.map((input, index) => {
-            return (
-              <div style={{ width: '100%' }} key={index}>
-                {
-                  input.type === 'radio' ?
-                    <FormRadio input={input} />
-                    :
-                    <FormSwitch input={input} leftToRight={leftToRight}
-                    />
-                }
-              </div>
+    sections.map(({ description, inputs, sectionTitle }, index) =>
+      <div key={index} style={{ border: '1px solid lightgray', padding: 15, margin: 5, borderRadius: 5 }}>
+        <p style={{ fontWeight: 'bold', color: 'black', textAlign: 'center' }}>{sectionTitle}</p>
+        <p style={{ fontWeight: 'bold', color: 'black' }}>{description}</p>
+        <FormGroup style={{ flexWrap: 'nowrap' }}>
+          {
+            inputs.map((input, index) => {
+              return (
+                <div style={{ width: '100%' }} key={index}>
+                  {
+                    input.type === 'radio' ?
+                      <FormRadio input={input} />
+                      :
+                      <FormSwitch input={input} leftToRight={leftToRight}
+                      />
+                  }
+                </div>
+              )
+            }
             )
           }
-          )
-        }
-      </FormGroup>
-    </>
+        </FormGroup>
+      </div>
+    )
+
   );
 }
 export default IncomeForm

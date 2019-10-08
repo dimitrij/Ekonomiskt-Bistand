@@ -42,12 +42,12 @@ const MySlider = withStyles((theme) => {
 
 const FromInput = ({
   input: { name, type, placeholder, defaultValue = 0, max },
-  id, section, changeValue, setChecked, isChecked, resetValue
+  id, section, changeValue, isChecked, resetValue
 }) => {
 
   useEffect(() => {
     return () => {
-      if (type === 'number' && (defaultValue === 0 || defaultValue === '')) {
+      if (type === 'number' && (defaultValue === 0)) {
         resetValue({ section, id, checked: isChecked })
       }
     }
@@ -55,8 +55,10 @@ const FromInput = ({
   }, [defaultValue]
     /*eslint-enable */
   )
+  console.log(type === 'number' && (defaultValue === 0 || defaultValue === ''))
+
   return (<>
-    <p style={{ inputStyle }}>-{defaultValue}-</p>
+    <p style={{ inputStyle }}>{placeholder} = {defaultValue || 0}</p>
     <MySlider
       valueLabelDisplay="off"
       defaultValue={parseInt(defaultValue)}

@@ -95,7 +95,7 @@ export default (state = INITIAL_STATE, action) => {
             if (!foundSection) {
               acc.push({
                 section: d.section,
-                sectionTitle: d.section,
+                sectionTitle: d.sectionTitle,
                 description: d.description,
                 inputs: [d]
               })

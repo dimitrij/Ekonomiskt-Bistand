@@ -13,9 +13,10 @@ const lang = [{
     sections: {
       section: 'Information',
       sectionTitle: 'Information',
-      description: 'Ange hela hushållets inkomster per månad i respektive ruta. Beloppen ska vara netto efter skatt och avrundade till hela kronor. Inkomster som inte passar in kan du lägga ihop under övrigt. Om du inte anger några inkomster räknas de som noll (0).',
       inputs: [{
           section: 'income',
+          sectionTitle: 'Inkomster',
+          description: 'Ange hela hushållets inkomster per månad i respektive ruta. Beloppen ska vara netto efter skatt och avrundade till hela kronor. Inkomster som inte passar in kan du lägga ihop under övrigt. Om du inte anger några inkomster räknas de som noll (0).',
           id: 1,
           SvgKey: 'Salary',
           title: 'Lön',
@@ -192,6 +193,8 @@ const lang = [{
         },
         {
           section: 'expenditure',
+          description: 'Ange hela hushållets utgifter per månad i respektive ruta. Avrunda till hela kronor. Om du inte anger några kostnader räknas de som noll (0).',
+          sectionTitle: 'Utgifter',
           id: 12,
           SvgKey: 'Maintenance_Grants',
           title: 'Bostad',
@@ -272,6 +275,8 @@ const lang = [{
         },
         {
           section: 'familyStatus',
+          description: 'De uppgifter du matar in om hushållets medlemmar avgör vilka belopp som hämtas från riksnormen. Om du inte anger något hämtas beloppet för ensamstående utan barn.',
+          sectionTitle: 'Familje förhållande',
           id: 17,
           type: 'radio',
           title: 'hushållets vuxna medlemmar',
