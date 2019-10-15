@@ -299,70 +299,142 @@ const lang = [{
         {
           section: 'familyStatus',
           id: 18,
+          defaultValues: {},
+          checked: true,
           SvgKey: 'Family',
           title: 'Fyll i hur många barn som bor hos dig',
-          checked: true,
           helpText: [
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
             ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
           ],
           userInputs: [{
+            type: 'number',
+            name: 'Antal barn i familjen',
+            placeholder: 'belopp',
+            max: 15,
+            defaultValue: 0
+          }],
+          userInputsSelectValue: [{
               name: '0-1',
-              type: 'number',
+              indexes: [],
               placeholder: '0-1 år',
-              max: 9,
-              defaultValue: 2
             },
             {
               name: '1-2',
-              type: 'number',
+              indexes: [],
               placeholder: '1-2 år',
-              max: 9,
-              defaultValue: 2
             },
             {
               name: '3',
-              type: 'number',
+              indexes: [],
               placeholder: '3 år',
-              max: 9,
-              defaultValue: 2
             },
             {
               name: '4-6',
-              type: 'number',
+              indexes: [],
               placeholder: '4-6 år',
-              max: 9,
-              defaultValue: 2
             },
             {
               name: '7-10',
-              type: 'number',
+              indexes: [],
               placeholder: '7-10 år',
-              max: 9
             },
             {
               name: '11-14',
-              type: 'number',
+              indexes: [],
               placeholder: '11-14 år',
-              max: 9
             },
             {
               name: '15-18',
-              type: 'number',
+              indexes: [],
               placeholder: '15-18 år',
-              max: 9
             },
             {
               name: '19-20',
-              type: 'number',
+              indexes: [],
               placeholder: '19-20 år, går i skolan',
-              max: 9
             }
           ]
         }
       ]
     },
+    Guide: [{
+        key: 'Funds_and_foundations',
+        title: 'Fonder och stiftelser',
+        subtitle: 'Helsingborgs stad har hand om ett stort antal stiftelser. Många av dessa kan du söka pengar från. Du får svar på din ansökan efter maximalt fyra månader från det att du har skickat den. Kom ihåg att du måste vara folkbokförd i Helsingborg och du kan endast bli beviljad en gång per kalenderår, oavsett när du skickade in din ansökan.',
+        links: [{
+          title: 'Fonder och stiftelser',
+          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/fonder-och-stiftelser-2/'
+        }]
+      },
+      {
+        key: 'Budget_and_debt_counseling',
+        title: 'Budget- och skuldrådgivning',
+        subtitle: 'Helsingborg erbjuder dig som har hamnat i ekonomiska svårigheter kostnadsfri budget- och skuldrådgivning. Rådgivarna finns på Helsingborg kontaktcenter.',
+        links: [{
+          title: 'länk',
+          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/fonder-och-stiftelser-2/'
+        }, {
+          title: 'Boka tid till rådgivning',
+          link: 'https://eservice.helsingborg.se/H71'
+        }]
+      },
+      {
+        key: 'GoodMan_trustee_guardian',
+        title: 'God man, förvaltare, förmyndare',
+        subtitle: 'Om du behöver någon som hjälper dig att ha hand om din ekonomi eller att prata med kommunen och andra myndigheter, kan du få en god man eller en förvaltare. ',
+        links: [{
+          title: 'länk',
+          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/god-man-forvaltare-formyndare/'
+        }]
+      },
+      {
+        key: 'rental_advice',
+        title: 'Hyresrådgivning',
+        subtitle: 'Har du hyresskulder, svårt att betala din hyra i tid? Är ditt hyreskontrakt uppsagt eller riskerar du vräkning på grund av obetald hyra?',
+        links: [{
+          title: 'länk',
+          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/hyresradgivning/'
+        }]
+      },
+      {
+        key: 'consumer_advice',
+        title: 'Konsumentrådgivning',
+        subtitle: 'Du som bor i kommunerna Helsingborg, Klippan eller Örkelljunga kan få gratis och oberoende konsumentrådgivning av kommunens konsumentrådgivare.',
+        links: [{
+            title: 'länk',
+            link: 'https://helsingborg.se/bo-bygga-och-miljo/konsumentradgivning/'
+          },
+          {
+            title: 'Fråga konsumentrådgivaren',
+            link: 'https://helsingborg.se/bo-bygga-och-miljo/konsumentradgivning/fraga-oss/'
+          }
+        ]
+      },
+      {
+        key: 'on_death',
+        title: 'Vid dödsfall',
+        subtitle: 'I vissa fall kan Helsingborgs stad hjälpa till att göra en enklare bouppteckning, en så kallad dödsboanmälan. När någon avlider måste den avlidne personens ekonomi redovisas i en bouppteckning som skickas till Skatteverket. Den kan göras privat av den som har god kännedom om boet eller genom att anlita jurist på exempelvis bank eller begravningsbyrå.',
+        links: [{
+            title: 'länk',
+            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/dodsfall-och-begravning/'
+          },
+          {
+            title: 'Bistånd till begravningskostnad',
+            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/forsorjningsstod-socialbidrag/bistand-till-begravningskostnad/'
+          }
+        ]
+      }, {
+        key: 'financial_assistance_during_holidays',
+        title: 'Ekonomiskt bistånd under lov',
+        subtitle: 'Som vuxenstuderande ska du i första hand söka sommarjobb så att du själv kan försörja dig under studieuppehållet. I god tid före uppehållet måste du söka alla typer av sommarjobb.',
+        links: [{
+          title: 'länk',
+          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/forsorjningsstod-socialbidrag/forsorjningsstod-under-lov/'
+        }]
+      }
+    ],
     buttons: {
       resetBtn: 'Reset',
       finish: 'Finish',

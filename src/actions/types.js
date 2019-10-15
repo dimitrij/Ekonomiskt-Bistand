@@ -5,3 +5,4 @@ export const RESET_VALUE = 'resetValue';
 export const CALCULATE = 'calculate';
 export const EDIT_MODE = 'editMode';
 export const RESET = 'reset'
+export const CHANGE_SELECT_VALUE = 'changeSelectValue';

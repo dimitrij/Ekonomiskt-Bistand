@@ -1,6 +1,7 @@
 import {
   CHANGE_LANGUAGE,
   CHANGE_VALUE,
+  CHANGE_SELECT_VALUE,
   RESET_VALUE,
   CALCULATE,
   EDIT_MODE,
@@ -29,6 +30,27 @@ export const changeValue = ({
       value
     }
   }
+}
+export const changeSelectValue = ({
+  name,
+  index,
+  defaultValues,
+  selectsLength
+}) => {
+  return {
+    type: CHANGE_SELECT_VALUE,
+    payload: {
+      name,
+      index,
+      defaultValues,
+      selectsLength
+    }
+  }
+}
+export const resetSelectValue = ({
+  selectsLength
+}) => {
+
 }
 export const resetValue = ({
   section,

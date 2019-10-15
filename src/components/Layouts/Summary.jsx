@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { doCalculate, ediAmount } from '../../actions/startAction'
+import GuideTabs from './GuideTabs';
 const useStyles = makeStyles(theme => {
   return ({
     root: {
@@ -25,10 +26,12 @@ const useStyles = makeStyles(theme => {
 });
 
 
-const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultText, leftToRight } }) => {
+const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultText, leftToRight, Guide } }) => {
   const classes = useStyles()
   useEffect(() => {
-    doCalculate(); ediAmount(0)
+    doCalculate();
+    ediAmount(0)
+    console.log(1)
   },
     /*eslint-disable */
     []
@@ -73,8 +76,9 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
       }
       <div>
         <h3>Result</h3>
-        <div dangerouslySetInnerHTML={{ __html: all > 0 ? resultText.no.replace("#####", '<span style="color:green">' + all + '</span>') : resultText.yes.replace("#####", '<span style="color:red">' + all * -1 + '</span>') }} />
+        <div dangerouslySetInnerHTML={{ __html: all > 0 ? resultText.no.replace("#####", '<span style="color:green;font-size:30px">' + all + '</span>') : resultText.yes.replace("#####", '<span style="color:red;font-size:30px">' + all * -1 + '</span>') }} />
       </div>
+      {all >= 0 && <GuideTabs Guide={Guide} />}
     </div >
   );
 }

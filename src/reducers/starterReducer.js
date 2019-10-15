@@ -1,12 +1,14 @@
 import {
   CHANGE_LANGUAGE,
   CHANGE_VALUE,
+  CHANGE_SELECT_VALUE,
   RESET_VALUE,
   CALCULATE,
   EDIT_MODE,
   RESET
 } from "../actions/types";
 import lang from './lang.js'
+
 const INITIAL_STATE = {
   defaultLanguage: {
     name: 'swedish',
@@ -24,35 +26,63 @@ const INITIAL_STATE = {
   defaultActiveSection: 0,
   defaultSteps: ['Information'],
 };
+
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CHANGE_VALUE:
-      const n = state.appLanguageData.sections.inputs.map((inp) => {
-        if (inp.section === action.payload.section && inp.id === action.payload.id) {
-          inp.userInputs.map((usInp) => {
-            if (usInp.name === action.payload.name && inp.type !== 'radio') {
-              inp.checked = true;
-              usInp.defaultValue = action.payload.value
-              return {
-                ...usInp,
-                ...inp
-              }
-            } else if (inp.type === 'radio' && action.payload.id === inp.id) {
-              inp.defaultValue = action.payload.value;
-              return {
-                ...usInp,
-                ...inp
-              }
-            }
-            return usInp
-          })
-          return inp
-        }
-        return inp
+      const n =
+        state.appLanguageData.sections.inputs.map((inp) => {
+          if (inp.section === action.payload.section && inp.id === action.payload.id) {
+            inp.userInputs.map((usInp) => {
+              if (usInp.name === action.payload.name && inp.type !== 'radio') {
+                if (inp.section === 'familyStatus' && inp.id === action.payload.id) {
+                  for (const key in inp.defaultValues) {
+                    if (inp.defaultValues.hasOwnProperty(key)) {
+                      if (parseInt(key) >= action.payload.value) {
+                        delete inp.defaultValues[key]
+                      }
+                    }
+                  }
+                  inp.userInputs.map((usInp) => {
+                    inp.checked = true;
+                    usInp.defaultValue = action.payload.value
+                    inp.userInputsSelectValue.map((selectInp, i) => {
+                      selectInp.indexes = selectInp.indexes.filter(value => value <= action.payload.value - 1);
+                      return selectInp
+                    })
 
-      })
+                    return {
+                      ...usInp,
+                      ...inp
+                    }
+                  })
+                } else {
+                  inp.checked = true;
+                  usInp.defaultValue = parseInt(action.payload.value)
+                  return {
+                    ...usInp,
+                    ...inp
+                  }
+                }
+
+              }
+              if (inp.type === 'radio' && action.payload.id === inp.id) {
+                inp.defaultValue = action.payload.value;
+                return {
+                  ...usInp,
+                  ...inp
+                }
+              }
+              return usInp
+            })
+            return inp
+          }
+          return inp
+
+        })
       return {
-        ...state, appLanguageData: {
+        ...state,
+        appLanguageData: {
           ...state.appLanguageData,
           sections: {
             ...state.appLanguageData.section,
@@ -60,27 +90,88 @@ export default (state = INITIAL_STATE, action) => {
           }
         }
       };
+    case CHANGE_SELECT_VALUE:
+      const xxx =
+        state.appLanguageData.sections.inputs.map((inp) => {
+          if (inp.section === 'familyStatus' && inp.id === 18) {
+            inp.defaultValues = {
+              ...inp.defaultValues,
+              ...action.payload.defaultValues
+            }
+            inp.userInputsSelectValue.map((selectInp, i) => {
+              selectInp.indexes = selectInp.indexes.filter(value => value <= action.payload.selectsLength - 1);
+              if (selectInp.name === action.payload.name && !selectInp.indexes.find(a => a === action.payload.index)) {
+                selectInp.indexes.push(action.payload.index)
+              } else {
+                if (selectInp.indexes.indexOf(action.payload.index) !== -1) {
+                  selectInp.indexes.splice(selectInp.indexes.indexOf(action.payload.index), 1);
+                }
+              }
+              return selectInp
+            })
+            return inp
+          }
+          return inp
+        })
+      return {
+        ...state,
+        appLanguageData: {
+          ...state.appLanguageData,
+          sections: {
+            ...state.appLanguageData.section,
+            inputs: xxx
+          }
+        }
+      };
     case RESET_VALUE:
       const x = state.appLanguageData.sections.inputs.map((inp) => {
         if (inp.section === action.payload.section) {
           if (inp.id === action.payload.id) {
-            if (inp.userInputs.length === 1) {
+            if (inp.id === 18) {
+              //need to fix
+
+
+
+              inp.defaultValues = {};
               inp.checked = !action.payload.checked;
-              inp.userInputs.map((d) => d.defaultValue = '')
-              return inp;
-            } else if (!inp.userInputs.find(({
-                defaultValue
-              }) => defaultValue)) {
-              inp.checked = !action.payload.checked;
-              inp.userInputs.map((d) => d.defaultValue = '')
+              inp.userInputs = inp.userInputs.map((usInp, index) => {
+                if (usInp.type === 'number') {
+                  usInp.defaultValue = 1
+                  return usInp
+                }
+                return usInp
+              })
+
+              inp.userInputsSelectValue = inp.userInputsSelectValue.map((usInp, index) => {
+                if (usInp.indexes.length > 0) {
+                  usInp.indexes = [];
+                  return usInp
+                }
+                return usInp
+              })
+              return inp
+
+            } else {
+              if (inp.userInputs.length === 1) {
+                inp.checked = !action.payload.checked;
+                inp.userInputs.map((d) => d.defaultValue = '')
+                return inp;
+              } else if (!inp.userInputs.find(({
+                  defaultValue
+                }) => defaultValue)) {
+                inp.checked = !action.payload.checked;
+                inp.userInputs.map((d) => d.defaultValue = '')
+              }
             }
+
           }
           return inp;
         }
         return inp
       })
       return {
-        ...state, appLanguageData: {
+        ...state,
+        appLanguageData: {
           ...state.appLanguageData,
           sections: {
             ...state.appLanguageData.section,
@@ -151,14 +242,14 @@ export default (state = INITIAL_STATE, action) => {
                   }]
                 })
               } else {
-                inp.userInputs.map((usInp) => {
-                  if (usInp.defaultValue) {
-                    total += (values[usInp.name] * parseInt(usInp.defaultValue));
-                    antalFamilyNumber += parseInt(usInp.defaultValue);
+                inp.userInputsSelectValue.map((usInp) => {
+                  if (usInp.indexes.length > 0) {
+                    total += (values[usInp.name] * parseInt(usInp.indexes.length));
+                    antalFamilyNumber += parseInt(usInp.indexes.length);
                     section.inputs.push({
-                      title: usInp.placeholder + ' * ' + usInp.defaultValue,
+                      title: usInp.placeholder + ' * ' + usInp.indexes.length,
                       userInputs: [{
-                        defaultValue: ((values[usInp.name] * parseInt(usInp.defaultValue))),
+                        defaultValue: ((values[usInp.name] * parseInt(usInp.indexes.length))),
                         name: usInp.title
                       }]
                     })
@@ -183,8 +274,9 @@ export default (state = INITIAL_STATE, action) => {
               section: d.section,
               sectionTitle: d.sectionTitle,
               inputs: d.inputs.filter(({
-                checked
-              }) => checked)
+                checked,
+                userInputs
+              }) => checked && userInputs[0].defaultValue)
             })
           }
 
@@ -227,39 +319,37 @@ export default (state = INITIAL_STATE, action) => {
             }) => sectionTitle)
         }
         case RESET:
-          const nx = state.appLanguageData.sections.map((sec) => {
-            sec.inputs.map((inp) => {
-              inp.userInputs.map((usInp) => {
-                if (inp.type !== 'radio') {
-                  inp.checked = false;
-                  usInp.defaultValue = ''
-                  return {
-                    ...usInp,
-                    ...inp
-                  }
-                } else if (inp.type === 'radio') {
-                  inp.defaultValue = '0';
-                  return {
-                    ...usInp,
-                    ...inp
-                  }
+          const nx = state.appLanguageData.sections.inputs.map((inp) => {
+            inp.userInputs.map((usInp) => {
+              if (inp.type !== 'radio') {
+                inp.checked = true;
+                usInp.defaultValue = action.payload.value
+                return {
+                  ...usInp,
+                  ...inp
                 }
-                return usInp
-              })
-              return inp
+              } else if (inp.type === 'radio' && action.payload.id === inp.id) {
+                inp.defaultValue = action.payload.value;
+                return {
+                  ...usInp,
+                  ...inp
+                }
+              }
+              return usInp
             })
+            return inp
 
-            return sec
 
           })
           return {
             ...state,
             appLanguageData: {
-                ...state.appLanguageData,
-                sections: nx,
-              },
-              calculate: [],
-              defaultActiveSection: 0,
+              ...state.appLanguageData,
+              sections: {
+                ...state.appLanguageData.section,
+                inputs: nx
+              }
+            }
           };
         default:
           return state

@@ -7,13 +7,14 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { connect } from 'react-redux';
 import queryString from 'query-string'
+import './App.css'
 const parsed = queryString.parse(window.location.search);
 const outerTheme = createMuiTheme({
   palette: {
     primary: {
-      main: parsed.main || '#D34F98',
+      main: parsed.main || '#CC0150',
       mainLight: parsed.mainLight || '#fbf8f8',
-      second: parsed.second || '#712082'
+      second: parsed.second || '#AE0A06'
     },
   },
 });

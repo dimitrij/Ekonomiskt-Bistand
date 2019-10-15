@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Ekonomiskt-Bistand/static/css/main.34de6062.chunk.css",
-    "main.js": "/Ekonomiskt-Bistand/static/js/main.0bc45bca.chunk.js",
-    "main.js.map": "/Ekonomiskt-Bistand/static/js/main.0bc45bca.chunk.js.map",
+    "main.css": "/Ekonomiskt-Bistand/static/css/main.ed0365fa.chunk.css",
+    "main.js": "/Ekonomiskt-Bistand/static/js/main.cdf1780e.chunk.js",
+    "main.js.map": "/Ekonomiskt-Bistand/static/js/main.cdf1780e.chunk.js.map",
     "runtime-main.js": "/Ekonomiskt-Bistand/static/js/runtime-main.da6de6aa.js",
     "runtime-main.js.map": "/Ekonomiskt-Bistand/static/js/runtime-main.da6de6aa.js.map",
-    "static/js/2.70f8e6ac.chunk.js": "/Ekonomiskt-Bistand/static/js/2.70f8e6ac.chunk.js",
-    "static/js/2.70f8e6ac.chunk.js.map": "/Ekonomiskt-Bistand/static/js/2.70f8e6ac.chunk.js.map",
+    "static/js/2.1a41b513.chunk.js": "/Ekonomiskt-Bistand/static/js/2.1a41b513.chunk.js",
+    "static/js/2.1a41b513.chunk.js.map": "/Ekonomiskt-Bistand/static/js/2.1a41b513.chunk.js.map",
     "index.html": "/Ekonomiskt-Bistand/index.html",
-    "precache-manifest.7086ae3ab99bff40e97fd5fbebcad72e.js": "/Ekonomiskt-Bistand/precache-manifest.7086ae3ab99bff40e97fd5fbebcad72e.js",
+    "precache-manifest.6bb662f62711d820ce3a3eabe5bc0b27.js": "/Ekonomiskt-Bistand/precache-manifest.6bb662f62711d820ce3a3eabe5bc0b27.js",
     "service-worker.js": "/Ekonomiskt-Bistand/service-worker.js",
-    "static/css/main.34de6062.chunk.css.map": "/Ekonomiskt-Bistand/static/css/main.34de6062.chunk.css.map"
+    "static/css/main.ed0365fa.chunk.css.map": "/Ekonomiskt-Bistand/static/css/main.ed0365fa.chunk.css.map"
   }
 }

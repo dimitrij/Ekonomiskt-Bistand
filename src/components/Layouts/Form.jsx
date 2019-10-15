@@ -5,10 +5,10 @@ import FormRadio from '../common/FormRadio'
 
 
 const IncomeForm = ({ leftToRight, data }) => {
-  const { description, inputs } = data
+  const { inputs } = data
+
   const sections =
     inputs.reduce((acc, d) => {
-      console.log(description)
       const foundSection = acc.find(a => a.section === d.section);
       if (!foundSection) {
         acc.push({
@@ -23,10 +23,9 @@ const IncomeForm = ({ leftToRight, data }) => {
       return acc
     },
       [])
-  console.log(sections)
   return (
     sections.map(({ description, inputs, sectionTitle }, index) =>
-      <div key={index} style={{ border: '1px solid lightgray', padding: 15, margin: 5, borderRadius: 5 }}>
+      <div key={index} style={{ borderTop: '1px solid lightgray', padding: 15, margin: 5 }}>
         <p style={{ fontWeight: 'bold', color: 'black', textAlign: 'center' }}>{sectionTitle}</p>
         <p style={{ fontWeight: 'bold', color: 'black' }}>{description}</p>
         <FormGroup style={{ flexWrap: 'nowrap' }}>

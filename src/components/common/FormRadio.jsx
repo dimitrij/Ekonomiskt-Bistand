@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { connect } from 'react-redux'
-import { changeValue } from '../../actions/startAction'
+import { changeValue, doCalculate } from '../../actions/startAction'
 
 
 const useStyles = makeStyles(theme => ({
@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const FormRadio = ({ input: { userInputs, id, defaultValue, section }, changeValue }) => {
+const FormRadio = ({ input: { userInputs, id, defaultValue, section }, changeValue, doCalculate }) => {
 
   const classes = useStyles();
   const [value, setValue] = React.useState(defaultValue);
@@ -64,9 +64,12 @@ const FormRadio = ({ input: { userInputs, id, defaultValue, section }, changeVal
     setValue(event.target.value);
     changeValue({ id, section, value: event.target.value })
   };
+  useEffect(() => {
+    doCalculate()
+  }, [doCalculate, value])
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-      <div style={{ width: '80%', display: 'flex', fontSize: 10 }}>
+      <div style={{ width: '90%', display: 'flex', fontSize: 10 }}>
         <RadioGroup
           aria-label="gender"
           name="gender1"
@@ -94,7 +97,7 @@ const FormRadio = ({ input: { userInputs, id, defaultValue, section }, changeVal
 }
 
 const mapStateToProps = ({ appLanguageData }) => ({ appLanguageData })
-export default connect(mapStateToProps, { changeValue })(FormRadio);
+export default connect(mapStateToProps, { changeValue, doCalculate })(FormRadio);
 const commonStyle = {
   position: 'absolute',
   top: 0,

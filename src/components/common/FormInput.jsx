@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
-import { changeValue } from '../../actions/startAction'
+import { changeValue, doCalculate } from '../../actions/startAction'
 import { withStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 
@@ -41,13 +41,16 @@ const MySlider = withStyles((theme) => {
 })(Slider);
 
 const FromInput = ({
-  input: { name, type, placeholder, defaultValue = 0, max },
-  id, section, changeValue, isChecked, resetValue
+  input,
+  input: { name, type, placeholder, defaultValue, max },
+  id, section, changeValue, isChecked, resetValue,
+  setValue, doCalculate
 }) => {
-
   useEffect(() => {
+    setValue(defaultValue)
+    doCalculate()
     return () => {
-      if (type === 'number' && (defaultValue === 0)) {
+      if (type === 'number' && (defaultValue === 0 && section !== 'familyStatus') && ((defaultValue === '' && section === 'familyStatus'))) {
         resetValue({ section, id, checked: isChecked })
       }
     }
@@ -55,31 +58,26 @@ const FromInput = ({
   }, [defaultValue]
     /*eslint-enable */
   )
-  console.log(type === 'number' && (defaultValue === 0 || defaultValue === ''))
-
   return (<>
-    <p style={{ inputStyle }}>{placeholder} = {defaultValue || 0}</p>
+    {(section === 'familyStatus' && type !== 'radio') && <p style={{ marginTop: 40 }}>{name}  {(defaultValue) ? ' = ' + defaultValue : null}</p>}
     <MySlider
       valueLabelDisplay="off"
       defaultValue={parseInt(defaultValue)}
       min={0}
-      max={max ? max : 60000}
+      max={max ? max : 30000}
       step={max ? 1 : 100}
-      onChange={(e, val) => { changeValue({ id, section, name, value: parseInt(val) }) }}
+      onChange={
+        (e, val) => {
+          changeValue({ id, section, name, value: parseInt(val) })
+        }
+      }
 
     />
   </>)
 
 }
 const mapStateToProps = ({ appLanguageData }) => ({ appLanguageData })
-export default connect(mapStateToProps, { changeValue })(FromInput);
+export default connect(mapStateToProps, { changeValue, doCalculate })(FromInput);
 
 
-const inputStyle = {
-  fontFamily: 'Roboto',
-  fontStyle: 'normal',
-  fontWeight: 500,
-  fontSize: '16px',
-  lineHeight: '19px',
-  width: '100%'
-}
+

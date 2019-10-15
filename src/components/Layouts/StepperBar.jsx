@@ -70,8 +70,9 @@ const StepperBar = ({
     buttons: { next, finish, back },
     steppersSteps: { summaryStepTitle },
     sections,
-    leftToRight
-  } }) => {
+    leftToRight,
+    resultText
+  }, calculate }) => {
   const getSteps = () => {
     return [...defaultSteps, summaryStepTitle];
   }
@@ -81,6 +82,7 @@ const StepperBar = ({
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
+  const [calcAll, setCalcAll] = useState(0)
 
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
@@ -97,6 +99,30 @@ const StepperBar = ({
     /*eslint-enable */
 
   )
+  useEffect(() => {
+    let all = 0;
+    for (let index = 0; index < calculate.length; index++) {
+      const element = calculate[index];
+      for (let index_ = 0; index_ < element.inputs.length; index_++) {
+        const usInp = element.inputs[index_];
+        for (let index__ = 0; index__ < usInp.userInputs.length; index__++) {
+          const inp = usInp.userInputs[index__];
+          if (element.section !== 'income') {
+            all -= inp.defaultValue
+          } else {
+            all += inp.defaultValue
+          }
+        }
+      }
+    }
+    setCalcAll(all)
+
+  },
+    /*eslint-disable */
+
+    [calculate, defaultActiveSection])
+  /*eslint-enable */
+
   useEffect(() => { ediAmount(activeStep) }, [activeStep, ediAmount])
   return (
     <div className={classes.root}>
@@ -113,15 +139,16 @@ const StepperBar = ({
           <div className={classes.bodyHolder}>
             {
               activeStep !== steps.length - 1 ?
-                // sections.inputs.map((section, index) => section.sectionTitle === steps[activeStep] ?
-                //   <Form key={index} data={section} leftToRight={leftToRight} />
-                //   :
-                //   null)
-                <Form data={sections} leftToRight={leftToRight} />
+                <>
+                  <Form data={sections} leftToRight={leftToRight} />
+
+                </>
                 :
                 <Summary />
             }
+            <h2 style={{ textAlign: 'center', fontSize: 20 }}>{calcAll}</h2>
             <div className={classes.buttonsHolder}>
+
               <Button
                 disabled={activeStep === 0}
                 onClick={handleBack}
@@ -139,5 +166,5 @@ const StepperBar = ({
     </div >
   );
 }
-const mapStateToProps = ({ appLanguageData, defaultActiveSection, defaultSteps }) => ({ appLanguageData, defaultActiveSection, defaultSteps })
+const mapStateToProps = ({ appLanguageData, defaultActiveSection, defaultSteps, calculate }) => ({ appLanguageData, defaultActiveSection, defaultSteps, calculate })
 export default connect(mapStateToProps, { ediAmount, reset })(StepperBar)
