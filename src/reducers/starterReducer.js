@@ -128,10 +128,6 @@ export default (state = INITIAL_STATE, action) => {
         if (inp.section === action.payload.section) {
           if (inp.id === action.payload.id) {
             if (inp.id === 18) {
-              //need to fix
-
-
-
               inp.defaultValues = {};
               inp.checked = !action.payload.checked;
               inp.userInputs = inp.userInputs.map((usInp, index) => {
@@ -141,7 +137,6 @@ export default (state = INITIAL_STATE, action) => {
                 }
                 return usInp
               })
-
               inp.userInputsSelectValue = inp.userInputsSelectValue.map((usInp, index) => {
                 if (usInp.indexes.length > 0) {
                   usInp.indexes = [];
@@ -154,16 +149,15 @@ export default (state = INITIAL_STATE, action) => {
             } else {
               if (inp.userInputs.length === 1) {
                 inp.checked = !action.payload.checked;
-                inp.userInputs.map((d) => d.defaultValue = '')
+                inp.userInputs.map((d) => d.defaultValue = 0)
                 return inp;
               } else if (!inp.userInputs.find(({
                   defaultValue
                 }) => defaultValue)) {
                 inp.checked = !action.payload.checked;
-                inp.userInputs.map((d) => d.defaultValue = '')
+                inp.userInputs.map((d) => d.defaultValue = 0)
               }
             }
-
           }
           return inp;
         }
@@ -319,39 +313,55 @@ export default (state = INITIAL_STATE, action) => {
             }) => sectionTitle)
         }
         case RESET:
+          console.log(action)
           const nx = state.appLanguageData.sections.inputs.map((inp) => {
-            inp.userInputs.map((usInp) => {
-              if (inp.type !== 'radio') {
-                inp.checked = true;
-                usInp.defaultValue = action.payload.value
-                return {
-                  ...usInp,
-                  ...inp
-                }
-              } else if (inp.type === 'radio' && action.payload.id === inp.id) {
-                inp.defaultValue = action.payload.value;
-                return {
-                  ...usInp,
-                  ...inp
-                }
+            if (inp.section === 'familyStatus') {
+              if (inp.type === 'radio') {
+                inp.defaultValue = '0';
+                return inp
+              } else {
+                inp.defaultValues = {};
+                inp.checked = false;
+                inp.userInputs = inp.userInputs.map((usInp, index) => {
+                  if (usInp.type === 'number') {
+                    usInp.defaultValue = 0;
+                    return usInp
+                  }
+                  return usInp
+                })
+                inp.userInputsSelectValue = inp.userInputsSelectValue.map((usInp, index) => {
+                  if (usInp.indexes.length > 0) {
+                    usInp.indexes = [];
+                    return usInp
+                  }
+                  return usInp
+                })
+                return inp
               }
-              return usInp
-            })
-            return inp
-
-
+            } else {
+              inp.checked = false;
+              inp.userInputs = inp.userInputs.map((usInp, index) => {
+                if (usInp.type === 'number') {
+                  usInp.defaultValue = 0;
+                  return usInp
+                }
+                return usInp
+              })
+              return inp
+            }
           })
           return {
             ...state,
             appLanguageData: {
-              ...state.appLanguageData,
-              sections: {
-                ...state.appLanguageData.section,
-                inputs: nx
-              }
-            }
-          };
-        default:
-          return state
+                ...state.appLanguageData,
+                sections: {
+                  ...state.appLanguageData.section,
+                  inputs: nx
+                }
+              },
+              defaultActiveSection: 0
+          }
+          default:
+            return state
   }
 }

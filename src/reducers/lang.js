@@ -280,7 +280,7 @@ const lang = [{
           id: 17,
           type: 'radio',
           title: 'hushållets vuxna medlemmar',
-          defaultValue: '1',
+          defaultValue: '0',
           helpText: [
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
             ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
@@ -300,7 +300,6 @@ const lang = [{
           section: 'familyStatus',
           id: 18,
           defaultValues: {},
-          checked: true,
           SvgKey: 'Family',
           title: 'Fyll i hur många barn som bor hos dig',
           helpText: [
