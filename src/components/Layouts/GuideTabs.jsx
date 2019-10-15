@@ -43,11 +43,6 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     marginTop: 50,
-
-    '& .PrivateTabIndicator-colorSecondary-375': {
-      backgroundColor: 'white',
-
-    },
     '& .MuiTab-root': {
       flex: 1,
       maxWidth: 'unset',
@@ -59,8 +54,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const GuideTabs = ({ Guide }) => {
-  console.log(Guide)
+const GuideTabs = ({ Guide: { sections } }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(1);
 
@@ -72,11 +66,15 @@ const GuideTabs = ({ Guide }) => {
     <div className={classes.root}>
       <h2>Försök titta på dessa andra möjligheter</h2>
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          {Guide.map(({ title }, index) => <Tab key={index} label={index + 1}{...a11yProps(index)} />)}
+        <Tabs TabIndicatorProps={{
+          style: {
+            backgroundColor: "white"
+          }
+        }} className={classes.indicator} value={value} onChange={handleChange} aria-label="simple tabs example">
+          {sections.map(({ title }, index) => <Tab key={index} label={index + 1}{...a11yProps(index)} />)}
         </Tabs>
       </AppBar>
-      {Guide.map(({ subtitle, title, links }, index) => <TabPanel key={index} value={value} index={index}>
+      {sections.map(({ subtitle, title, links }, index) => <TabPanel key={index} value={value} index={index}>
         <h3>{title}</h3>
         {subtitle}
         {links.map(({ title, link }, index) => <h5 key={index}><a rel="noopener noreferrer" href={link} target='_blank'>{title}</a></h5>)}

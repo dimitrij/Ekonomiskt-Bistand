@@ -313,7 +313,6 @@ export default (state = INITIAL_STATE, action) => {
             }) => sectionTitle)
         }
         case RESET:
-          console.log(action)
           const nx = state.appLanguageData.sections.inputs.map((inp) => {
             if (inp.section === 'familyStatus') {
               if (inp.type === 'radio') {

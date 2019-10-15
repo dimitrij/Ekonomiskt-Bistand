@@ -358,82 +358,84 @@ const lang = [{
         }
       ]
     },
-    Guide: [{
-        key: 'Funds_and_foundations',
-        title: 'Fonder och stiftelser',
-        subtitle: 'Helsingborgs stad har hand om ett stort antal stiftelser. Många av dessa kan du söka pengar från. Du får svar på din ansökan efter maximalt fyra månader från det att du har skickat den. Kom ihåg att du måste vara folkbokförd i Helsingborg och du kan endast bli beviljad en gång per kalenderår, oavsett när du skickade in din ansökan.',
-        links: [{
+    Guide: {
+      sections: [{
+          key: 'Funds_and_foundations',
           title: 'Fonder och stiftelser',
-          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/fonder-och-stiftelser-2/'
-        }]
-      },
-      {
-        key: 'Budget_and_debt_counseling',
-        title: 'Budget- och skuldrådgivning',
-        subtitle: 'Helsingborg erbjuder dig som har hamnat i ekonomiska svårigheter kostnadsfri budget- och skuldrådgivning. Rådgivarna finns på Helsingborg kontaktcenter.',
-        links: [{
-          title: 'länk',
-          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/fonder-och-stiftelser-2/'
+          subtitle: 'Helsingborgs stad har hand om ett stort antal stiftelser. Många av dessa kan du söka pengar från. Du får svar på din ansökan efter maximalt fyra månader från det att du har skickat den. Kom ihåg att du måste vara folkbokförd i Helsingborg och du kan endast bli beviljad en gång per kalenderår, oavsett när du skickade in din ansökan.',
+          links: [{
+            title: 'Fonder och stiftelser',
+            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/fonder-och-stiftelser-2/'
+          }]
+        },
+        {
+          key: 'Budget_and_debt_counseling',
+          title: 'Budget- och skuldrådgivning',
+          subtitle: 'Helsingborg erbjuder dig som har hamnat i ekonomiska svårigheter kostnadsfri budget- och skuldrådgivning. Rådgivarna finns på Helsingborg kontaktcenter.',
+          links: [{
+            title: 'länk',
+            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/fonder-och-stiftelser-2/'
+          }, {
+            title: 'Boka tid till rådgivning',
+            link: 'https://eservice.helsingborg.se/H71'
+          }]
+        },
+        {
+          key: 'GoodMan_trustee_guardian',
+          title: 'God man, förvaltare, förmyndare',
+          subtitle: 'Om du behöver någon som hjälper dig att ha hand om din ekonomi eller att prata med kommunen och andra myndigheter, kan du få en god man eller en förvaltare. ',
+          links: [{
+            title: 'länk',
+            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/god-man-forvaltare-formyndare/'
+          }]
+        },
+        {
+          key: 'rental_advice',
+          title: 'Hyresrådgivning',
+          subtitle: 'Har du hyresskulder, svårt att betala din hyra i tid? Är ditt hyreskontrakt uppsagt eller riskerar du vräkning på grund av obetald hyra?',
+          links: [{
+            title: 'länk',
+            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/hyresradgivning/'
+          }]
+        },
+        {
+          key: 'consumer_advice',
+          title: 'Konsumentrådgivning',
+          subtitle: 'Du som bor i kommunerna Helsingborg, Klippan eller Örkelljunga kan få gratis och oberoende konsumentrådgivning av kommunens konsumentrådgivare.',
+          links: [{
+              title: 'länk',
+              link: 'https://helsingborg.se/bo-bygga-och-miljo/konsumentradgivning/'
+            },
+            {
+              title: 'Fråga konsumentrådgivaren',
+              link: 'https://helsingborg.se/bo-bygga-och-miljo/konsumentradgivning/fraga-oss/'
+            }
+          ]
+        },
+        {
+          key: 'on_death',
+          title: 'Vid dödsfall',
+          subtitle: 'I vissa fall kan Helsingborgs stad hjälpa till att göra en enklare bouppteckning, en så kallad dödsboanmälan. När någon avlider måste den avlidne personens ekonomi redovisas i en bouppteckning som skickas till Skatteverket. Den kan göras privat av den som har god kännedom om boet eller genom att anlita jurist på exempelvis bank eller begravningsbyrå.',
+          links: [{
+              title: 'länk',
+              link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/dodsfall-och-begravning/'
+            },
+            {
+              title: 'Bistånd till begravningskostnad',
+              link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/forsorjningsstod-socialbidrag/bistand-till-begravningskostnad/'
+            }
+          ]
         }, {
-          title: 'Boka tid till rådgivning',
-          link: 'https://eservice.helsingborg.se/H71'
-        }]
-      },
-      {
-        key: 'GoodMan_trustee_guardian',
-        title: 'God man, förvaltare, förmyndare',
-        subtitle: 'Om du behöver någon som hjälper dig att ha hand om din ekonomi eller att prata med kommunen och andra myndigheter, kan du få en god man eller en förvaltare. ',
-        links: [{
-          title: 'länk',
-          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/god-man-forvaltare-formyndare/'
-        }]
-      },
-      {
-        key: 'rental_advice',
-        title: 'Hyresrådgivning',
-        subtitle: 'Har du hyresskulder, svårt att betala din hyra i tid? Är ditt hyreskontrakt uppsagt eller riskerar du vräkning på grund av obetald hyra?',
-        links: [{
-          title: 'länk',
-          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/hyresradgivning/'
-        }]
-      },
-      {
-        key: 'consumer_advice',
-        title: 'Konsumentrådgivning',
-        subtitle: 'Du som bor i kommunerna Helsingborg, Klippan eller Örkelljunga kan få gratis och oberoende konsumentrådgivning av kommunens konsumentrådgivare.',
-        links: [{
+          key: 'financial_assistance_during_holidays',
+          title: 'Ekonomiskt bistånd under lov',
+          subtitle: 'Som vuxenstuderande ska du i första hand söka sommarjobb så att du själv kan försörja dig under studieuppehållet. I god tid före uppehållet måste du söka alla typer av sommarjobb.',
+          links: [{
             title: 'länk',
-            link: 'https://helsingborg.se/bo-bygga-och-miljo/konsumentradgivning/'
-          },
-          {
-            title: 'Fråga konsumentrådgivaren',
-            link: 'https://helsingborg.se/bo-bygga-och-miljo/konsumentradgivning/fraga-oss/'
-          }
-        ]
-      },
-      {
-        key: 'on_death',
-        title: 'Vid dödsfall',
-        subtitle: 'I vissa fall kan Helsingborgs stad hjälpa till att göra en enklare bouppteckning, en så kallad dödsboanmälan. När någon avlider måste den avlidne personens ekonomi redovisas i en bouppteckning som skickas till Skatteverket. Den kan göras privat av den som har god kännedom om boet eller genom att anlita jurist på exempelvis bank eller begravningsbyrå.',
-        links: [{
-            title: 'länk',
-            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/dodsfall-och-begravning/'
-          },
-          {
-            title: 'Bistånd till begravningskostnad',
-            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/forsorjningsstod-socialbidrag/bistand-till-begravningskostnad/'
-          }
-        ]
-      }, {
-        key: 'financial_assistance_during_holidays',
-        title: 'Ekonomiskt bistånd under lov',
-        subtitle: 'Som vuxenstuderande ska du i första hand söka sommarjobb så att du själv kan försörja dig under studieuppehållet. I god tid före uppehållet måste du söka alla typer av sommarjobb.',
-        links: [{
-          title: 'länk',
-          link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/forsorjningsstod-socialbidrag/forsorjningsstod-under-lov/'
-        }]
-      }
-    ],
+            link: 'https://helsingborg.se/omsorg-och-stod/socialt-och-ekonomiskt-stod/forsorjningsstod-socialbidrag/forsorjningsstod-under-lov/'
+          }]
+        }
+      ]
+    },
     buttons: {
       resetBtn: 'Reset',
       finish: 'Finish',
