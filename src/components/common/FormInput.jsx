@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { changeValue, doCalculate } from '../../actions/startAction'
 import { withStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
+import TextField from '@material-ui/core/TextField';
+import queryString from 'query-string'
+const parsed = queryString.parse(window.location.search);
 
 
 const MySlider = withStyles((theme) => {
@@ -60,19 +63,40 @@ const FromInput = ({
   )
   return (<>
     {(section === 'familyStatus' && type !== 'radio') && <p style={{ marginTop: 40 }}>{name}  {(defaultValue) ? ' = ' + defaultValue : null}</p>}
-    <MySlider
-      valueLabelDisplay="off"
-      defaultValue={parseInt(defaultValue)}
-      min={0}
-      max={max ? max : 30000}
-      step={max ? 1 : 100}
-      onChange={
-        (e, val) => {
-          changeValue({ id, section, name, value: parseInt(val) })
+    {parsed.slider ?
+      <MySlider
+        valueLabelDisplay="off"
+        defaultValue={parseInt(defaultValue)}
+        min={0}
+        max={max ? max : 30000}
+        step={max ? 1 : 100}
+        onChange={
+          (e, val) => {
+            changeValue({ id, section, name, value: parseInt(val) })
+          }
         }
-      }
 
-    />
+      /> :
+      <TextField
+        id="standard-full-width"
+        label="Label"
+        style={{ margin: 8 }}
+        placeholder="Placeholder"
+        helperText="Full width!"
+        fullWidth
+        type="number"
+        margin="normal"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        onChange={
+          (e) => {
+            changeValue({ id, section, name, value: parseInt(e.target.value) })
+          }
+        }
+        value={parseInt(defaultValue) || 0}
+      />}
+
   </>)
 
 }
