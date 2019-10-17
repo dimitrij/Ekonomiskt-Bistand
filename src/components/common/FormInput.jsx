@@ -89,12 +89,13 @@ const FromInput = ({
         InputLabelProps={{
           shrink: true,
         }}
+        inputProps={{ min: 0, max: max ? max : 30000, step: max ? 1 : 100 }}
         onChange={
           (e) => {
             changeValue({ id, section, name, value: parseInt(e.target.value) })
           }
         }
-        value={parseInt(defaultValue) || 0}
+        value={defaultValue.toString()}
       />}
 
   </>)
