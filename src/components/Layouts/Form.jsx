@@ -6,7 +6,6 @@ import FormRadio from '../common/FormRadio'
 
 const IncomeForm = ({ leftToRight, data }) => {
   const { inputs } = data
-
   const sections =
     inputs.reduce((acc, d) => {
       const foundSection = acc.find(a => a.section === d.section);

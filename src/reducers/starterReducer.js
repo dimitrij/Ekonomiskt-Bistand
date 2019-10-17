@@ -291,7 +291,11 @@ export default (state = INITIAL_STATE, action) => {
         ...state
       }
       case CHANGE_LANGUAGE:
-
+        console.log(lang.find(({
+          language: {
+            name
+          }
+        }) => name === action.payload))
         return {
           ...state,
           defaultLanguage: lang.find(({
@@ -303,15 +307,9 @@ export default (state = INITIAL_STATE, action) => {
               language: {
                 name
               }
-            }) => name === action.payload),
-            defaultSteps: lang.find(({
-              language: {
-                name
-              }
-            }) => name === action.payload).sections.map(({
-              sectionTitle
-            }) => sectionTitle)
+            }) => name === action.payload)
         }
+        //return state;
         case RESET:
           const nx = state.appLanguageData.sections.inputs.map((inp) => {
             if (inp.section === 'familyStatus') {

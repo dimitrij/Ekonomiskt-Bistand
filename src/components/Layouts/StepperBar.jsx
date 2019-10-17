@@ -70,8 +70,7 @@ const StepperBar = ({
     buttons: { next, finish, back },
     steppersSteps: { summaryStepTitle },
     sections,
-    leftToRight,
-    resultText
+    leftToRight
   }, calculate }) => {
   const getSteps = () => {
     return [...defaultSteps, summaryStepTitle];
@@ -119,10 +118,9 @@ const StepperBar = ({
 
   },
     /*eslint-disable */
-
-    [calculate, defaultActiveSection])
-  /*eslint-enable */
-
+    [calculate, defaultActiveSection]
+    /*eslint-enable */
+  )
   useEffect(() => { ediAmount(activeStep) }, [activeStep, ediAmount])
   return (
     <div className={classes.root}>
@@ -139,16 +137,12 @@ const StepperBar = ({
           <div className={classes.bodyHolder}>
             {
               activeStep !== steps.length - 1 ?
-                <>
-                  <Form data={sections} leftToRight={leftToRight} />
-
-                </>
+                <Form data={sections} leftToRight={leftToRight} />
                 :
                 <Summary />
             }
-            <h2 style={{ textAlign: 'center', fontSize: 20 }}>{calcAll}</h2>
+            <h2 style={{ textAlign: 'center' }}>{calcAll} kr</h2>
             <div className={classes.buttonsHolder}>
-
               <Button
                 disabled={activeStep === 0}
                 onClick={handleBack}
