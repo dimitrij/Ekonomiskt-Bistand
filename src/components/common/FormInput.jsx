@@ -45,6 +45,7 @@ const MySlider = withStyles((theme) => {
 
 const FromInput = ({
   input,
+  helpText,
   input: { name, type, placeholder, defaultValue, max },
   id, section, changeValue, isChecked, resetValue,
   setValue, doCalculate
@@ -81,8 +82,8 @@ const FromInput = ({
         id="standard-full-width"
         label="Label"
         style={{ margin: 8 }}
-        placeholder="Placeholder"
-        helperText="Full width!"
+        placeholder={placeholder}
+        helperText={helpText}
         fullWidth
         type="number"
         margin="normal"

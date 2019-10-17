@@ -135,7 +135,7 @@ const FormSwitch = ({ leftToRight, input: { title, userInputs, helpText, id, che
         </div>}
       />
       {isChecked &&
-        userInputs.map((input, index) => <FromInput setValue={setValue} input={input} key={index} id={id} section={section} setChecked={setChecked} resetValue={resetValue} isChecked={isChecked} />
+        userInputs.map((input, index) => <FromInput helpText={helpText} setValue={setValue} input={input} key={index} id={id} section={section} setChecked={setChecked} resetValue={resetValue} isChecked={isChecked} />
         )}
       {isChecked &&
         section === 'familyStatus' &&
