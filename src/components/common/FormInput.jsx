@@ -80,7 +80,6 @@ const FromInput = ({
       /> :
       <TextField
         id="standard-full-width"
-        label="Label"
         style={{ margin: 8 }}
         placeholder={placeholder}
         helperText={helpText}
