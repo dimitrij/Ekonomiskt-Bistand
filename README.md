@@ -36,7 +36,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### Colors
 ### app.js
 ```javascript
-
 //change the colors here 
 const outerTheme = createMuiTheme({
   palette: {
@@ -49,36 +48,38 @@ const outerTheme = createMuiTheme({
 });
 
 ```
-
-
 ### startReducer.js
 
+The national standard for 2019 (valid from 1 January 2019)
+Open [https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/ovrigt/riksnormen-forsorjningsstod-2019.pdf](https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/ovrigt/riksnormen-forsorjningsstod-2019.pdf) to get the new values .
+
 ```javascript
- let values = {
-              //Personal costs for adults, SEK
-              // Single
-              '0': 3090,
-              //live together
-              '1': 5570,
-              //Personal costs per home-based child and school-age child, SEK
-              '0-1': 2130,
-              '1-2': 2380,
-              '3': 2120,
-              '4-6': 2380,
-              '7-10': 2990,
-              '11-14': 3440,
-              '15-18': 3880,
-              '19-20': 3910,
-            };
-            //Common household costs, SEK
-            let antal = {
-              '1': 990,
-              '2': 1100,
-              '3': 1380,
-              '4': 1570,
-              '5': 1810,
-              '6': 2050,
-              '7': 2220,
-              '8': 170,
-            };
+ let values = 
+ {
+    //Personal costs for adults, SEK
+    // Single
+    '0': 3090,
+    //live together
+    '1': 5570,
+    //Personal costs per home-based child and school-age child, SEK
+    '0-1': 2130,
+    '1-2': 2380,
+    '3': 2120,
+    '4-6': 2380,
+    '7-10': 2990,
+    '11-14': 3440,
+    '15-18': 3880,
+    '19-20': 3910,
+};
+   //Common household costs, SEK
+let antal = {
+    '1': 990,
+    '2': 1100,
+    '3': 1380,
+    '4': 1570,
+    '5': 1810,
+    '6': 2050,
+    '7': 2220,
+    '8': 170,
+};
 ```
