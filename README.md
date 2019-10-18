@@ -52,7 +52,7 @@ const outerTheme = createMuiTheme({
 
 #### The national standard for 2019 (valid from 1 January 2019)
 
-Open [https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/ovrigt/riksnormen-forsorjningsstod-2019.pdf](https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/ovrigt/riksnormen-forsorjningsstod-2019.pdf) to get the new values .
+open [Riksnormen för försörjningsstöd](https://www.socialstyrelsen.se/stod-i-arbetet/ekonomiskt-bistand/riksnormen/) to get the new values .
 
 ```javascript
  let values = 
