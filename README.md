@@ -33,10 +33,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 
 ## Usage
+### Colors
 ### app.js
 ```javascript
 
-//change the colors
+//change the colors here 
 const outerTheme = createMuiTheme({
   palette: {
     primary: {
@@ -46,4 +47,38 @@ const outerTheme = createMuiTheme({
     },
   },
 });
+
+```
+
+
+### startReducer.js
+
+```javascript
+ let values = {
+              //Personal costs for adults, SEK
+              // Single
+              '0': 3090,
+              //live together
+              '1': 5570,
+              //Personal costs per home-based child and school-age child, SEK
+              '0-1': 2130,
+              '1-2': 2380,
+              '3': 2120,
+              '4-6': 2380,
+              '7-10': 2990,
+              '11-14': 3440,
+              '15-18': 3880,
+              '19-20': 3910,
+            };
+            //Common household costs, SEK
+            let antal = {
+              '1': 990,
+              '2': 1100,
+              '3': 1380,
+              '4': 1570,
+              '5': 1810,
+              '6': 2050,
+              '7': 2220,
+              '8': 170,
+            };
 ```

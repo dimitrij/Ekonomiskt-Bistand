@@ -194,9 +194,13 @@ export default (state = INITIAL_STATE, action) => {
         const foundType = acc.find(a => a.section === d.section);
         if (!foundType) {
           if (d.section === 'familyStatus') {
+
             let values = {
+              //Personal costs for adults, SEK
+              // Single
               '0': 3090,
               '1': 5570,
+              //Personal costs per home-based child and school-age child, SEK
               '0-1': 2130,
               '1-2': 2380,
               '3': 2120,
