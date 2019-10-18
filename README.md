@@ -51,7 +51,8 @@ const outerTheme = createMuiTheme({
 ### startReducer.js
 
 The national standard for 2019 (valid from 1 January 2019)
-Open [https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/ovrigt/riksnormen-forsorjningsstod-2019.pdf](https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/ovrigt/riksnormen-forsorjningsstod-2019.pdf) to get the new values .
+Open 
+[https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/ovrigt/riksnormen-forsorjningsstod-2019.pdf](https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/dokument-webb/ovrigt/riksnormen-forsorjningsstod-2019.pdf) to get the new values .
 
 ```javascript
  let values = 
