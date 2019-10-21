@@ -26,12 +26,12 @@ const useStyles = makeStyles(theme => {
 });
 
 
-const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultText, leftToRight, Guide } }) => {
+const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { leftToRight, Guide, generalTexts: { totaText, resultWord, resultText } } }) => {
   const classes = useStyles()
   useEffect(() => {
     doCalculate();
     ediAmount(0)
-    console.log(1)
+    console.log(resultWord)
   },
     /*eslint-disable */
     []
@@ -65,8 +65,8 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
                 </div>
               )
             })}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 0' }}>
-                <h3 style={{ flex: 4 }}>Total</h3>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 0', flexDirection: !leftToRight ? 'row-reverse' : 'row' }}>
+                <h3 style={{ flex: 4 }}>{totaText}</h3>
                 <h3 style={{ flex: 2 }}>{total}</h3>
                 <div style={{ flex: 1 }}></div>
               </div>
@@ -75,7 +75,7 @@ const Summary = ({ calculate, doCalculate, ediAmount, appLanguageData: { resultT
       })
       }
       <div>
-        <h3>Result</h3>
+        <h3>{resultWord}</h3>
         <div dangerouslySetInnerHTML={{ __html: all > 0 ? resultText.no.replace("#####", '<span style="color:green;font-size:30px">' + all + '</span>') : resultText.yes.replace("#####", '<span style="color:red;font-size:30px">' + all * -1 + '</span>') }} />
       </div>
       {all >= 0 && <GuideTabs Guide={Guide} />}

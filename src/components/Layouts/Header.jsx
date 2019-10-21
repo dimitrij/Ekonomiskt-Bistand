@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
-const AppHeader = ({ defaultLanguage: { name, icon }, supportedLanguages, changeLanguage, reset, appLanguageData: { title } }) => {
+const AppHeader = ({ defaultLanguage: { name, icon }, supportedLanguages, changeLanguage, reset, appLanguageData: { generalTexts: { title } } }) => {
   const classes = useStyles();
   return (
     <>

@@ -23,14 +23,13 @@ const INITIAL_STATE = {
     }
   }) => name === 'swedish'),
   calculate: [],
-  defaultActiveSection: 0,
-  defaultSteps: ['Information'],
+  defaultActiveSection: 0
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CHANGE_VALUE:
-      const n =
+      let inputs =
         state.appLanguageData.sections.inputs.map((inp) => {
           if (inp.section === action.payload.section && inp.id === action.payload.id) {
             inp.userInputs.map((usInp) => {
@@ -86,12 +85,12 @@ export default (state = INITIAL_STATE, action) => {
           ...state.appLanguageData,
           sections: {
             ...state.appLanguageData.section,
-            inputs: n
+            inputs
           }
         }
       };
     case CHANGE_SELECT_VALUE:
-      const xxx =
+      let inputs_ =
         state.appLanguageData.sections.inputs.map((inp) => {
           if (inp.section === 'familyStatus' && inp.id === 18) {
             inp.defaultValues = {
@@ -119,12 +118,12 @@ export default (state = INITIAL_STATE, action) => {
           ...state.appLanguageData,
           sections: {
             ...state.appLanguageData.section,
-            inputs: xxx
+            inputs: inputs_
           }
         }
       };
     case RESET_VALUE:
-      const x = state.appLanguageData.sections.inputs.map((inp) => {
+      let inputs__ = state.appLanguageData.sections.inputs.map((inp) => {
         if (inp.section === action.payload.section) {
           if (inp.id === action.payload.id) {
             if (inp.id === 18) {
@@ -169,7 +168,7 @@ export default (state = INITIAL_STATE, action) => {
           ...state.appLanguageData,
           sections: {
             ...state.appLanguageData.section,
-            inputs: x
+            inputs: inputs__
           }
         }
       };
@@ -261,7 +260,7 @@ export default (state = INITIAL_STATE, action) => {
               return inp
             })
             section.inputs.push({
-              title: state.appLanguageData.allFamilyCountText + ' * ' + antalFamilyNumber,
+              title: state.appLanguageData.generalTexts.allFamilyCountText + ' * ' + antalFamilyNumber,
               userInputs: [{
                 defaultValue: antalFamilyNumber > 8 ? ((((antalFamilyNumber - 7) * antal['8']) + (antal['7']))) : antalFamilyNumber === 8 ? ((antal['7']) + (antal['8'])) : (antal[antalFamilyNumber.toString()]),
                 name: ''
@@ -296,11 +295,6 @@ export default (state = INITIAL_STATE, action) => {
         ...state
       }
       case CHANGE_LANGUAGE:
-        console.log(lang.find(({
-          language: {
-            name
-          }
-        }) => name === action.payload))
         return {
           ...state,
           defaultLanguage: lang.find(({
@@ -316,7 +310,7 @@ export default (state = INITIAL_STATE, action) => {
         }
         //return state;
         case RESET:
-          const nx = state.appLanguageData.sections.inputs.map((inp) => {
+          const inputs___ = state.appLanguageData.sections.inputs.map((inp) => {
             if (inp.section === 'familyStatus') {
               if (inp.type === 'radio') {
                 inp.defaultValue = '0';
@@ -358,7 +352,7 @@ export default (state = INITIAL_STATE, action) => {
                 ...state.appLanguageData,
                 sections: {
                   ...state.appLanguageData.section,
-                  inputs: nx
+                  inputs: inputs___
                 }
               },
               defaultActiveSection: 0

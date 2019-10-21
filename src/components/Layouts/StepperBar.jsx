@@ -65,15 +65,15 @@ const useStyles = makeStyles(theme => {
 
 
 const StepperBar = ({
-  defaultSteps, ediAmount, reset, defaultActiveSection,
+  ediAmount, reset, defaultActiveSection,
   appLanguageData: {
     buttons: { next, finish, back },
-    steppersSteps: { summaryStepTitle },
+    generalTexts: { summaryStepTitle, mainSectionStepTitle },
     sections,
     leftToRight
   }, calculate }) => {
   const getSteps = () => {
-    return [...defaultSteps, summaryStepTitle];
+    return [mainSectionStepTitle, summaryStepTitle];
   }
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(defaultActiveSection);

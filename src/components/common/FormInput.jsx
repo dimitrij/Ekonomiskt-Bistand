@@ -44,9 +44,9 @@ const MySlider = withStyles((theme) => {
 })(Slider);
 
 const FromInput = ({
-  input,
+  appLanguageData: { generalTexts: { placeholder } },
   helpText,
-  input: { name, type, placeholder, defaultValue, max },
+  input: { name, type, defaultValue, max },
   id, section, changeValue, isChecked, resetValue,
   setValue, doCalculate
 }) => {
@@ -64,7 +64,7 @@ const FromInput = ({
   )
   return (<>
     {(section === 'familyStatus' && type !== 'radio') && <p style={{ marginTop: 40 }}>{name}  {(defaultValue) ? ' = ' + defaultValue : null}</p>}
-    {parsed.slider ?
+    {false ?
       <MySlider
         valueLabelDisplay="off"
         defaultValue={parseInt(defaultValue)}
@@ -95,7 +95,7 @@ const FromInput = ({
             changeValue({ id, section, name, value: parseInt(e.target.value) })
           }
         }
-        value={defaultValue.toString()}
+        value={defaultValue ? defaultValue.toString() : ''}
       />}
 
   </>)

@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const GuideTabs = ({ Guide: { sections } }) => {
+const GuideTabs = ({ Guide: { sections, title } }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(1);
 
@@ -64,7 +64,7 @@ const GuideTabs = ({ Guide: { sections } }) => {
 
   return (
     <div className={classes.root}>
-      <h2>Försök titta på dessa andra möjligheter</h2>
+      <h2>{title}</h2>
       <AppBar position="static">
         <Tabs TabIndicatorProps={{
           style: {

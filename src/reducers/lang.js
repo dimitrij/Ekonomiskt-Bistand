@@ -4,12 +4,6 @@ const lang = [{
       icon: '🇸🇪'
     },
     leftToRight: true,
-    title: ' Testa om du kan få försörjningsstöd ',
-    resultText: {
-      yes: 'Beräkningen visar att dina månadsinkomster är ##### kr lägre än den nivå som kan ge rätt till försörjningsstöd. Det kan betyda att du får försörjningsstöd om du ansöker. Socialtjänsten gör en individuell bedömning och kan ta hänsyn till annat än ekonomiska faktorer. Kontakta socialtjänsten i din kommun om du vill ansöka om försörjningsstöd eller ha mer information.',
-      no: 'Beräkningen visar att dina månadsinkomster är ##### kr högre än den nivå som kan ge rätt till försörjningsstöd. Det kan betyda att du inte får försörjningsstöd om du ansöker. Socialtjänsten gör en individuell bedömning och kan ta hänsyn till annat än ekonomiska faktorer. Kontakta socialtjänsten i din kommun om du vill ansöka om försörjningsstöd eller ha mer information.'
-    },
-    allFamilyCountText: 'antal familj medlemmar',
     sections: {
       section: 'Information',
       sectionTitle: 'Information',
@@ -28,7 +22,6 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Salary',
-            placeholder: 'belopp',
           }]
         },
         {
@@ -44,7 +37,6 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Unions_Fees_And_A-kassa',
-            placeholder: 'belopp',
           }]
         },
         {
@@ -60,7 +52,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Sick_Activities_Replacement',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -76,7 +68,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Sickness_Benefit',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -92,7 +84,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Parental_Allowance',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -108,7 +100,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Pension',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -124,7 +116,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Maintenance_Grants',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -140,7 +132,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Child_Benefit',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -156,7 +148,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Student_Aid',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -172,7 +164,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Housing_benefit',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -188,7 +180,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Others',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -206,7 +198,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Rent',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -222,7 +214,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Electricity',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -238,7 +230,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Work_Travels',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -254,7 +246,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Home_Insurance',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -270,7 +262,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Unemployment_Benefit_Fee_for_Unemployment_Benefit',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -310,7 +302,6 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Antal barn i familjen',
-            placeholder: 'belopp',
             max: 15,
             defaultValue: 0
           }],
@@ -359,6 +350,7 @@ const lang = [{
       ]
     },
     Guide: {
+      title: 'Försök titta på dessa andra möjligheter',
       sections: [{
           key: 'Funds_and_foundations',
           title: 'Fonder och stiftelser',
@@ -439,14 +431,21 @@ const lang = [{
     buttons: {
       resetBtn: 'Reset',
       finish: 'Finish',
-      next: 'Next',
+      next: 'nästa',
       back: 'Back'
     },
-    steppersSteps: {
-      incomeStepTitle: 'Income',
-      expensesStepTitle: 'Expenses',
+    generalTexts: {
+      mainSectionStepTitle: 'Information',
       summaryStepTitle: 'Summary',
-      familyStatus: 'Family Status'
+      totaText: 'Total',
+      resultWord: 'result',
+      title: ' Testa om du kan få försörjningsstöd ',
+      resultText: {
+        yes: 'Beräkningen visar att dina månadsinkomster är ##### kr lägre än den nivå som kan ge rätt till försörjningsstöd. Det kan betyda att du får försörjningsstöd om du ansöker. Socialtjänsten gör en individuell bedömning och kan ta hänsyn till annat än ekonomiska faktorer. Kontakta socialtjänsten i din kommun om du vill ansöka om försörjningsstöd eller ha mer information.',
+        no: 'Beräkningen visar att dina månadsinkomster är ##### kr högre än den nivå som kan ge rätt till försörjningsstöd. Det kan betyda att du inte får försörjningsstöd om du ansöker. Socialtjänsten gör en individuell bedömning och kan ta hänsyn till annat än ekonomiska faktorer. Kontakta socialtjänsten i din kommun om du vill ansöka om försörjningsstöd eller ha mer information.'
+      },
+      allFamilyCountText: 'antal familj medlemmar',
+      placeholder: 'belopp'
     }
   },
   {
@@ -455,22 +454,16 @@ const lang = [{
       icon: '🇦🇪'
     },
     leftToRight: false,
-    title: ' اختبار ما اذا كان يمكنك الحصول على دعم الدخل ',
-    resultText: {
-      yes: 'يوضح الحساب أن دخلك الشهري هو ##### أقل من المستوى الذي يمكن أن يؤهلك لدعم المدفوعات. قد يعني هذا أنك تتلقى مدفوعات الدعم إذا تقدمت بطلب. تقوم الخدمة الاجتماعية بإجراء تقييم فردي ويمكن أن تأخذ في الاعتبار غير العوامل المالية. اتصل بالخدمات الاجتماعية في بلديتك إذا كنت ترغب في التقدم للحصول على دعم الرعاية الاجتماعية أو الحصول على مزيد من المعلومات.',
-      no: 'يوضح الحساب أن دخلك الشهري أعلى ##### من المستوى الذي يمكن أن يتأهل للحصول على مدفوعات الدعم. قد يعني هذا أنك لا تتلقى مدفوعات الدعم إذا تقدمت بطلب. تقوم الخدمة الاجتماعية بإجراء تقييم فردي ويمكن أن تأخذ في الاعتبار غير العوامل المالية. اتصل بالخدمات الاجتماعية في بلديتك إذا كنت ترغب في التقدم للحصول على دعم الرعاية الاجتماعية أو الحصول على مزيد من المعلومات.'
-    },
-    allFamilyCountText: 'عدد جميع افراد الاسرة',
     sections: {
-      section: 'Information',
+      section: 'المعلومات',
       sectionTitle: 'المعلومات المطلوبة',
       inputs: [{
           section: 'income',
           sectionTitle: 'الدخل',
           description: 'أدخل دخل الأسرة بالكامل شهريًا في المربع المعني. يجب أن تكون المبالغ صافية بعد الضريبة وتقريبها إلى كرون كامل. الإيرادات التي لا تصلح يمكن أن تضاف معا. إذا لم تحدد أي دخل ، يتم حسابها على أنها صفر (0).',
           id: 1,
-          SvgKey: 'الرابت',
-          title: 'Lön',
+          SvgKey: 'Salary',
+          title: 'الراتب',
           helpText: [
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
             ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
@@ -479,7 +472,6 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Salary',
-            placeholder: 'belopp',
           }]
         },
         {
@@ -495,7 +487,6 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Unions_Fees_And_A-kassa',
-            placeholder: 'belopp',
           }]
         },
         {
@@ -511,7 +502,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Sick_Activities_Replacement',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -527,7 +518,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Sickness_Benefit',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -543,7 +534,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Parental_Allowance',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -559,7 +550,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Pension',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -575,7 +566,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Maintenance_Grants',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -591,7 +582,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Child_Benefit',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -607,7 +598,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Student_Aid',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -623,14 +614,14 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Housing_benefit',
-            placeholder: 'belopp'
+
           }]
         },
         {
           section: 'income',
           id: 11,
-          SvgKey: 'مداخيل اخرى',
-          title: 'Övrigt',
+          SvgKey: 'Others',
+          title: 'مداخيل اخرى ',
           helpText: [
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
             ',Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ',
@@ -639,13 +630,13 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Others',
-            placeholder: 'belopp'
+
           }]
         },
         {
           section: 'expenditure',
           description: 'أدخل نفقات الأسرة بأكملها شهريًا في المربع المعني. كل القيم بالكرون . إذا لم تحدد أي تكاليف ، فسيتم حسابها على أنها صفر (0)..',
-          sectionTitle: 'Utgifter',
+          sectionTitle: 'النفقات',
           id: 12,
           SvgKey: 'Maintenance_Grants',
           title: 'أجار السكن',
@@ -657,7 +648,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Rent',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -673,7 +664,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Electricity',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -689,7 +680,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Work_Travels',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -705,7 +696,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Home_Insurance',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -721,7 +712,7 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'Unemployment_Benefit_Fee_for_Unemployment_Benefit',
-            placeholder: 'belopp'
+
           }]
         },
         {
@@ -761,7 +752,6 @@ const lang = [{
           userInputs: [{
             type: 'number',
             name: 'العدد',
-            placeholder: 'belopp',
             max: 15,
             defaultValue: 0
           }],
@@ -810,6 +800,7 @@ const lang = [{
       ]
     },
     Guide: {
+      title: 'حاول زيارة هذه المواقع',
       sections: [{
           key: 'Funds_and_foundations',
           title: 'Fonder och stiftelser',
@@ -889,16 +880,24 @@ const lang = [{
     },
     buttons: {
       resetBtn: 'Reset',
-      finish: 'Finish',
-      next: 'Next',
-      back: 'Back'
+      finish: 'النهاية',
+      next: 'التالي',
+      back: 'السابق'
     },
-    steppersSteps: {
-      incomeStepTitle: 'Income',
-      expensesStepTitle: 'Expenses',
-      summaryStepTitle: 'Summary',
-      familyStatus: 'Family Status'
+    generalTexts: {
+      mainSectionStepTitle: 'المعلومات المطلوبة',
+      summaryStepTitle: 'النتيجة التقريبية',
+      totaText: 'المجموع',
+      resultWord: 'النتيجة',
+      title: ' اختبار ما اذا كان يمكنك الحصول على دعم الدخل ',
+      resultText: {
+        yes: 'يوضح الحساب أن دخلك الشهري هو ##### أقل من المستوى الذي يمكن أن يؤهلك لدعم المدفوعات. قد يعني هذا أنك تتلقى مدفوعات الدعم إذا تقدمت بطلب. تقوم الخدمة الاجتماعية بإجراء تقييم فردي ويمكن أن تأخذ في الاعتبار غير العوامل المالية. اتصل بالخدمات الاجتماعية في بلديتك إذا كنت ترغب في التقدم للحصول على دعم الرعاية الاجتماعية أو الحصول على مزيد من المعلومات.',
+        no: 'يوضح الحساب أن دخلك الشهري أعلى ##### من المستوى الذي يمكن أن يتأهل للحصول على مدفوعات الدعم. قد يعني هذا أنك لا تتلقى مدفوعات الدعم إذا تقدمت بطلب. تقوم الخدمة الاجتماعية بإجراء تقييم فردي ويمكن أن تأخذ في الاعتبار غير العوامل المالية. اتصل بالخدمات الاجتماعية في بلديتك إذا كنت ترغب في التقدم للحصول على دعم الرعاية الاجتماعية أو الحصول على مزيد من المعلومات.'
+      },
+      allFamilyCountText: 'عدد جميع افراد الاسرة',
+      placeholder: 'القيمة'
     }
+
   }
 
 ];
